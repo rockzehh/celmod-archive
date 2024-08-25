@@ -1,0 +1,16 @@
+"VertexlitGeneric"
+{
+
+        "$baseTexture" "models/props_wasteland/metal_tram001a"
+	"$bumpmap" "models/celmod/emblem3/s12_n"
+	"$selfillum" "1"
+	"$phong" "1"
+	"$phongexponent" "10"
+	"$phongboost" "0.5"	
+	"$phongfresnelranges"	"[2 0 2]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+	"$nodecal" 1
+}

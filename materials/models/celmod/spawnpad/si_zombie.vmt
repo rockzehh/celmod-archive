@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/celmod/spawnpad/si_zombie"
+	"$nodecal" 1
+	"$envmap" "CustomCubeMaps/simplespec"
+}

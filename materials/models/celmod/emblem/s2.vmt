@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/celmod/emblem/s2"
+	"$envmap" "env_cubemap"
+	"$basealphaenvmapmask" 1
+	"$selfillum" "1"
+}

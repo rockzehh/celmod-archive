@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "celweps/a11/flower"
+	"$bumpmap" "celweps/a11/flower_normal"
+
+	"$nodecal" 1
+
+	"$selfillum" "0"
+	"$phong" "1"
+	"$phongexponent" "7"
+	"$phongboost" ".4"	
+	"$phongfresnelranges"	"[2 0 2]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+}

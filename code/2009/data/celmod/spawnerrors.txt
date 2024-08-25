@@ -1,0 +1,8 @@
+"props"
+{
+	"Errors"
+	{
+		"woodcrate3"		"Model directory doesn't exist."
+		"shelf3"		"Model does not match up with prop type."
+	}
+}

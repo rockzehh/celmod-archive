@@ -1,0 +1,21 @@
+"VertexlitGeneric"
+{
+        "$baseTexture" "models/celmod/rb"
+         "$selfillum" "1"
+         "$envmap" "CustomCubeMaps/simplespec"
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$baseTextureTransform"
+			"texturescrollrate" 1.0
+			"texturescrollangle" 0.00
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	20
+		}
+	}
+}

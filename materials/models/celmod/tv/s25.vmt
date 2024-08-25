@@ -1,0 +1,15 @@
+"UnlitGeneric"
+{
+	"$basetexture" "effects/breenscreen_static01_"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	24
+		}
+	}
+}

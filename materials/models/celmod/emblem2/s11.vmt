@@ -1,0 +1,9 @@
+"VortWarp"
+{
+	"$baseTexture" "models/celmod/emblem2/s11_3"
+	"$flowmap" "models/celmod/emblem2/s11_1"
+	"$selfillummap" "models/celmod/emblem2/s11_2"
+	"$entityorigin" ""
+	"$warpparam" "1"
+	"$selfillumtint" "[10 10 10]"
+}

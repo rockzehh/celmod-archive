@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/celmod/santa/cloth_s1"
+	"$surfaceprop" "plastic"
+
+	"$detail" "detail/metal_detail_01"
+	"$detailscale" "4.283"
+	"$detailblendfactor" ".65"
+	"$detailblendmode" "0"
+}

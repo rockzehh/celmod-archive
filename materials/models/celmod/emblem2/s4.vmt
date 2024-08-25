@@ -1,0 +1,29 @@
+"VertexlitGeneric"
+{
+        "$baseTexture" "models/celmod/emblem2/s4"
+	"$selfillum"	"1"
+	"$phong" "1"
+	"$phongexponent" "7"
+	"$phongboost" "0.4"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$baseTextureTransform"
+			"texturescrollrate" 1.0
+			"texturescrollangle" 0.00
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	20
+		}
+	}
+}

@@ -1,0 +1,29 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "Effects/Combineshield/comshieldwall"
+
+	"$translucent" "1"
+	"$additive" 1
+	"$nodecal" 1
+
+	"$selfillum" "1"
+	"$phong" "1"
+	"$phongexponent" "10"
+	"$phongboost" "1"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" .1
+			"texturescrollangle" -45
+		}
+	}
+}

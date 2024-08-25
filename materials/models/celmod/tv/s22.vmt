@@ -1,0 +1,22 @@
+"UnlitGeneric"
+{
+	"$basetexture" "matsys_regressiontest/background"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"$catspeed" 0
+	"$hundred" "100"
+	"Proxies"
+	{
+		"UniformNoise"
+		{
+			"minVal" -1
+			"maxVal" 1
+			"resultVar" "$catspeed"
+		}
+		"TextureTransform"
+		{
+			"rotateVar" "$catspeed" 
+			"resultVar" "$basetexturetransform"
+		}
+	}
+}

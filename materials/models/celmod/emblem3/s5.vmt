@@ -1,0 +1,26 @@
+"VertexlitGeneric"
+{
+
+	"$basetexture" "models/Weapons/V_slam/new light1"
+	"$selfillum"	"1"
+	"$phong" "1"
+	"$phongexponent" "7"
+	"$phongboost" "0.4"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+	"$nodecal" 1
+	"Proxies"
+	{
+		"Sine"
+		{
+			"resultVar" "$selfIllumTint"
+			"sinemin" 0.10
+			"sinemax" 1.00
+			"sineperiod" 0.50
+		}
+	}
+}

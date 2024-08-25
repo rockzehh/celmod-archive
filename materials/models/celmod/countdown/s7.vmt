@@ -1,0 +1,17 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "models/celmod/countdown/countdown"
+	"$frame"	"6"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"$texture2"	"dev/dev_scanline"
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" .06
+			"texturescrollangle" -90
+		}
+	}
+}

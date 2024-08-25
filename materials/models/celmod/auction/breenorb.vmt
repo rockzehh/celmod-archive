@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/celmod/auction/breenorb"
+	"$nodecal" 1
+}

@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/celmod/piano/piano"
+	"$surfaceprop" "plastic"
+	"$detail" "detail/plaster_detail_01"
+	"$detailscale" "3"
+	"$detailblendfactor" ".8"
+	"$detailblendmode" "0"
+}

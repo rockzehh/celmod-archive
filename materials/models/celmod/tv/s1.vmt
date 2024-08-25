@@ -1,0 +1,12 @@
+"VertexlitGeneric"
+{
+
+        "$basetexture" "halflife/black"
+	"$nodecal" "1"
+	"$selfillum" "1"
+	"$phong" "1"
+	"$phongexponent" "4"
+	"$phongboost" "1"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+}

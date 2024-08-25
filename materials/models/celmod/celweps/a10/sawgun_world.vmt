@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "celweps/a10/sawgun_world"
+	"$selfillum" "1"
+	"$detail" "detail/metal_detail_01"
+	"$detailscale" "2.283"
+	"$detailblendfactor" "0.85"
+	"$detailblendmode" "0"
+}

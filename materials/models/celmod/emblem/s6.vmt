@@ -1,0 +1,26 @@
+"VertexLitGeneric"
+{
+    	"$basetexture" "Glass/glasswindowbreak070a_mask"
+	"$selfillum" "1"
+	"$bumpmap" "Models/Effects/portalrift_normal"
+	"$bumpframe" 0
+
+	"$phong" "1"
+	"$phongexponent" "10"
+	"$phongboost" "1"	
+	"$phongfresnelranges"	"[2 0 2]"
+
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$bumpmap"
+			"animatedtextureframenumvar" "$bumpframe"
+			"animatedtextureframerate" 22
+		}
+	}
+}

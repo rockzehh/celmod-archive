@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+
+        "$baseTexture" "Glass/glasswindowbreak070a_mask"
+         "$selfillum" "1"
+         "$envmap" "CustomCubeMaps/simplespec"
+}

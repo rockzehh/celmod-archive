@@ -1,0 +1,22 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/celmod/tv/s2"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"$rotate" 0
+	"Proxies"
+	{
+		"LinearRamp"
+		{
+			"rate" 30
+			"initialValue" 0
+			"resultVar" "$rotate"
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" 10
+			"texturescrollangle" "$rotate"
+		}
+	}
+}

@@ -1,0 +1,22 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "models/celmod/tv/s15"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"$texture2"	"dev/dev_scanline"
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	.1
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" .06
+			"texturescrollangle" -90
+		}
+	}
+}

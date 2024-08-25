@@ -1,0 +1,30 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/celmod/emblem3/s11_3"
+	"$selfillum" "1"
+	"$translucent" 1
+	"$additive" 1
+
+	"$detail" "models/celmod/emblem3/s11_2"	
+	"$detailscale" "5"
+	"$detailblendfactor" .4
+	"$detailblendmode" 6
+
+	"$nodecal" 1
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$baseTextureTransform"
+			"texturescrollrate" 1
+			"texturescrollangle" 270.00
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" 1.0
+			"texturescrollangle" 180.00
+		}
+	}
+}

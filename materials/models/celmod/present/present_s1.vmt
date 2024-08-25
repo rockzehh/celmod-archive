@@ -1,0 +1,11 @@
+"VertexlitGeneric"
+{
+
+      	"$basetexture" "models/celmod/present/present_s1"
+	"$surfaceprop" "cardboard"
+	"$nodecal" 1
+	"$detail" "detail/noise_detail_01"
+	"$detailscale" "7.74"
+	"$detailblendfactor" "0.5"
+	"$detailblendmode" "0"
+}

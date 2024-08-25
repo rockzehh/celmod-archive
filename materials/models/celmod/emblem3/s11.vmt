@@ -1,0 +1,41 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/celmod/emblem3/s11_3"
+	"$selfillum" "1"
+
+	"$detail" "models/celmod/emblem3/s11_2"
+	"$detailscale" "1.0"
+	"$detailblendfactor" 0.8
+	"$detailblendmode" 1
+
+	"$envmap" "models/celmod/emblem3/s11_3"
+	"$envmapint" "[0.3 0.3 0.3]"
+
+	"$nodecal" 1
+
+	"$phong" "1"
+	"$phongexponent" "7"
+	"$phongboost" "0.4"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$baseTextureTransform"
+			"texturescrollrate" 0.5
+			"texturescrollangle" 270.00
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" 1
+			"texturescrollangle" 180.00
+		}
+	}
+}

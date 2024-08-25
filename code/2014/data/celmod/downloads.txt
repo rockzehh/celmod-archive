@@ -1,0 +1,2 @@
+materials/celmod/cm_overlay2.vmt
+materials/celmod/cm_overlay2.vtf

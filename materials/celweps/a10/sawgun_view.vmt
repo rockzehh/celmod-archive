@@ -1,0 +1,17 @@
+"vertexlitgeneric"
+{
+	"$baseTexture" "celweps/a10/sawgun_view"
+	"$bumpmap" "celweps/a10/sawgun_normal"
+	"$selfillum" "1"
+	
+	"$phong" "1"
+	"$phongexponent" "32"
+	"$phongboost"	"4"
+	"$phongfresnelranges"	"[.3 0.4 3.5]"
+	
+	"$detail" "detail/metal_detail_01"
+	"$detailscale" "4.283"
+	"$detailblendfactor" "0.65"
+	"$detailblendmode" "0"
+
+}

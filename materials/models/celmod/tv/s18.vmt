@@ -1,0 +1,15 @@
+"UnlitGeneric"
+{
+	"$basetexture" "effects/tp_eyefx/tp2eyefx.vtf"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	24
+		}
+	}
+}

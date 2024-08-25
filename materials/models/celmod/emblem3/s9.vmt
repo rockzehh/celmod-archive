@@ -1,0 +1,18 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/celmod/emblem3/s9"
+	"$nodecal" 1
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$baseTextureTransform"
+			"texturescrollrate" 0.01
+			"texturescrollangle" 0.00
+		}
+	}
+}
+
+
+
+

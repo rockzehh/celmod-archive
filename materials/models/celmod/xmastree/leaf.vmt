@@ -1,0 +1,13 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/celmod/xmastree/leaf"
+	"$alphatest" 1
+	"$model" 1
+	"$nocull" 1
+	"$nodecal" 1
+
+	"$detail" "detail/noise_detail_01"
+	"$detailscale" "0.74"
+	"$detailblendfactor" "0.8"
+	"$detailblendmode" "0"
+}

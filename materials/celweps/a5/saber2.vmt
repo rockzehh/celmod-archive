@@ -1,0 +1,24 @@
+"vertexlitgeneric" {
+    "$basetexture" "shadertest/camo_envmask"
+    "$basemapalphaenvmapmask" 1
+    "$envmap" "env_cubemap"
+    "$envmapcontrast" 0.8
+    "$envmapsaturation" 0.7
+    "$surfaceprop" "metal"
+    "$model" "1"
+
+	"$detail" "celweps/a5/saber_fire"	
+	"$detailscale" "3"
+	"$detailblendfactor" 1
+	"$detailblendmode" 6
+
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+	}
+}

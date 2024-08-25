@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\celmod\candycane_s2"
+	"$bumpmap" "models/celmod/flat_normal"
+
+	"$phong" "1"
+	"$phongexponent" "1"
+	"$phongfresnelranges"	"[.3 .5 .6]"
+
+	// Rim lighting parameters
+	"$rimlight" "1"												// To enable rim lighting (requires phong)
+	"$rimlightexponent" "1"										// Exponent for phong component of rim lighting	
+	"$rimlightboost" "1"										// Boost for ambient cube component of rim lighting
+}

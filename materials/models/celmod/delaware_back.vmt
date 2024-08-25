@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/celmod/delaware_back"
+	"$nodecal" 1
+}

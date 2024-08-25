@@ -1,0 +1,32 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "shadertest/camo_envmask"
+	"$selfillum" "1"
+
+	"$detail" "effects/combineshield/comshieldwall"
+	"$detailscale" "2"
+	"$detailblendfactor" 1
+	"$detailblendmode" 1
+
+	"$nodecal" 1
+
+	"$phong" "1"
+	"$phongexponent" "7"
+	"$phongboost" "0.4"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" .1
+			"texturescrollangle" -45
+		}
+	}
+}

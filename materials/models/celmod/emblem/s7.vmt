@@ -1,0 +1,20 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "shadertest/camo_envmask"
+	"$selfillum" "1"
+
+	"$detail" "models/celmod/emblem/s7"	
+	"$detailscale" "2"
+	"$detailblendfactor" .1
+	"$detailblendmode" 6
+
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+	}
+}

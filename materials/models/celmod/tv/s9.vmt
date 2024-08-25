@@ -1,0 +1,15 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/celmod/tv/s9"
+	"$surfaceprop" "metal"
+	"$nodecal" 1
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	24
+		}
+	}
+}

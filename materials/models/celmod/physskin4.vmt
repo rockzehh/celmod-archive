@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+    	"$basetexture" "Glass/glasswindowbreak070a_mask"
+	"$bumpmap" "Models/Effects/portalrift_normal"
+	"$envmap" "CustomCubeMaps/simplespec"
+	"$selfillum" 1
+	"$bumpframe" 0
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$bumpmap"
+			"animatedtextureframenumvar" "$bumpframe"
+			"animatedtextureframerate" 22
+		}
+	}
+}

@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "Stone/stonewall006b"
+	"$surfaceprop" "concrete"
+
+	"$detail" "detail\noise_detail_01"
+	"$detailscale" "1.345"
+	"$detailblendfactor" .8
+	"$detailblendmode" 0
+}

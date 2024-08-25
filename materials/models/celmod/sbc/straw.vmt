@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/celmod/sbc/straw"
+	"$bumpmap" "models/celmod/sbc/straw_normal"
+}

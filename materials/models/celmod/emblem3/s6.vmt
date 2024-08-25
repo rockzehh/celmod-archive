@@ -1,0 +1,27 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/celmod/emblem3/s6"
+	"$bumpmap" "models/celmod/emblem3/s6_n"
+
+	"$nodecal" 1
+
+	"$selfillum" "1"
+	"$phong" "1"
+	"$phongexponent" "7"
+	"$phongboost" ".4"	
+	"$phongfresnelranges"	"[2 0 2]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" .1
+			"texturescrollangle" -45
+		}
+	}
+}

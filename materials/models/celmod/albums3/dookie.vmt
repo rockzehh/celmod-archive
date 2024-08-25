@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/celmod/albums3/albums3"
+	"$frame"	3
+	"$nodecal" 1
+}
