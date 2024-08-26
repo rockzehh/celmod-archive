@@ -120,8 +120,8 @@ public OnPluginStart()
 	AddCommandListener(HideChatTriggers, "say");
 	AddCommandListener(HideChatTriggers, "say_team");  
 	
-	g_hServerPropLimit = CreateConVar("cm_prop_limit", "300", "Maxiumum number of props a player is allowed to spawn.", FCVAR_PLUGIN|FCVAR_NOTIFY);
-	g_hServerCelLimit = CreateConVar("cm_cel_limit", "50", "Maxiumum number of CelMod entities a client is allowed.", FCVAR_PLUGIN|FCVAR_NOTIFY);
+	g_hServerPropLimit = CreateConVar("cm_prop_limit", "300", "Maxiumum number of props a player is allowed to spawn.", FCVAR_NOTIFY);
+	g_hServerCelLimit = CreateConVar("cm_cel_limit", "50", "Maxiumum number of CelMod entities a client is allowed.", FCVAR_NOTIFY);
 	
 	HookConVarChange(g_hServerPropLimit, OnConvarsUpdated);
 	HookConVarChange(g_hServerCelLimit, OnConvarsUpdated);
@@ -144,7 +144,7 @@ public OnClientAuthorized(iClient, const String:sAuth[])
 {
 	decl String:sAuthID[64], String:sIP[64], String:sCountry[4];
 
-	GetClientAuthString(iClient, sAuthID, sizeof(sAuthID), true);
+	GetClientAuthId(iClient, AuthId_Steam2, sAuthID, sizeof(sAuthID), true);
 	GetClientIP(iClient, sIP, sizeof(sIP));
 	GeoipCode3(sIP, sCountry);
 
@@ -216,7 +216,7 @@ public OnClientDisconnect(iClient)
 
 	decl String:sAuthID[64];
 
-	GetClientAuthString(iClient, sAuthID, sizeof(sAuthID), true);
+	GetClientAuthId(iClient, AuthId_Steam2, sAuthID, sizeof(sAuthID), true);
 
 	CPrintToChatAll("[D] {olive}%N{default} <{olive}%s{default}>", iClient, sAuthID);
 
@@ -681,10 +681,6 @@ public OnGameFrame()
 				}
 			}
 		}
-	}
-	if(!bCanUseEmblem)
-	{
-		NotYourEmblem(iClient);
 	}
 }
 
