@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "cncr04s/tile/afrikatrim2"
+	"$selfillum" "1"
+	"$envmap" "CustomCubeMaps/simplespec"
+}
+
+
+      

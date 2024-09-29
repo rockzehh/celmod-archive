@@ -1,0 +1,11 @@
+"patch"
+{
+	"include"		"materials/EFFECTS/COMBINESHIELD/COMSHIELDWALL3.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/gm_park_zm/c272_-3581_129"
+		"Proxies"
+		{
+		}
+	}
+}

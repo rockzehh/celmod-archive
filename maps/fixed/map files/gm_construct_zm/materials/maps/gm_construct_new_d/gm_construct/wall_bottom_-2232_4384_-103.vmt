@@ -1,0 +1,11 @@
+"patch"
+{
+	"include"		"materials/GM_CONSTRUCT/WALL_BOTTOM.vmt"
+	"replace"
+	{
+		"LightmappedGeneric_DX9"
+		{
+			"$envmap"		"maps/gm_construct_new_d/c-2232_4384_-103"
+		}
+	}
+}

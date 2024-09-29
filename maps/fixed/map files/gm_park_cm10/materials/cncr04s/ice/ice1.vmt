@@ -1,0 +1,11 @@
+"lightmappedgeneric"
+{
+	"$basetexture" "cncr04s/ice/ice1"
+	"$surfaceprop" "ice"
+	"$keywords" "ice"
+	//"$detail" "detail/noise_detail_01"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.03"
+	"$detailblendfactor" "0.8"
+	"$detailblendmode" "0"
+}

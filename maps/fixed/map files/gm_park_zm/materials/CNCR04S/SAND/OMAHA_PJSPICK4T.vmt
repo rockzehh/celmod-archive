@@ -1,0 +1,8 @@
+"lightmappedgeneric"
+{
+	"$basetexture" "cncr04s/sand/omaha_pjspick4"
+	"$surfaceprop" "sand"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.03"
+	"$keywords" "sand"
+}

@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\celmod\xmastree\redcracker"
+	"$surfaceprop" "cardboard"
+
+	"$detail" "detail/noise_detail_01"
+	"$detailscale" "7.74"
+	"$detailblendfactor" "0.8"
+	"$detailblendmode" "0"
+}

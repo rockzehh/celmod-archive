@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "CustomText/GC Textures/Earth/Dirt_Cracked01"
+	"$bumpmap" "CustomText/GC Textures/Earth/Dirt_Cracked01_normal"
+	"$surfaceprop" "Dirt"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.10"
+}

@@ -1,0 +1,11 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "celmod/grass_b"
+	"$basetexture2" "nature/dirtfloor009c"
+	"%tooltexture" "nature/blenddirtgrass006a_tooltexture"
+        "$basetexturetransform" "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+        "$basetexturetransform2" "center .5 .5 scale 2 2 rotate 0 translate 0 0"
+	"$surfaceprop" "dirt"
+	"$detail" "celmod/clouds3"
+	"$detailscale" "0.05"
+}

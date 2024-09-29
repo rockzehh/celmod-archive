@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/maps/gm_park_cm8/celmod/water_autumn_depth_1536.vmt"
+	"insert"
+	{
+		"$waterdepth"		"19"
+	}
+}

@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "blueblazing/signs/danger_holecover"
+	"$bumpmap" "blueblazing/signs/danger_holecover_norm"
+	"$surfaceprop" "Metal"
+	"$translucent" 1
+}

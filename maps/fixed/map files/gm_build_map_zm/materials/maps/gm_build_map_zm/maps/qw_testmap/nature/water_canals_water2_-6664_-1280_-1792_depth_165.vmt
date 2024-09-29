@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/maps/qw_testmap/nature/water_canals_water2_-6664_-1280_-1792.vmt"
+	"insert"
+	{
+		"$waterdepth"		"165"
+	}
+}

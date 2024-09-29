@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	// Original shader: BaseTexture
+	"$basetexture" "celmod/gm_cubeland/sky_day01_09up"
+}

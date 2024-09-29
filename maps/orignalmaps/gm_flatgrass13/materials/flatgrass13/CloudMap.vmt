@@ -1,0 +1,64 @@
+"UnlitTwoTexture"
+{
+	"$basetexture"	"flatgrass13/cloudmap"
+	"$texture2" 	"flatgrass13/cloudmapmask"
+	
+	"$translucent" "1"
+	"$nofog" 1
+	"$additive" 1
+	"$model" "1"
+
+	$scale			"2"
+	$translate		"0.5"
+	$rotate			"0"
+	
+	$scale2			"1"
+	$translate2		"0"
+	$rotate2		"0"
+	
+	Proxies 
+	{
+		TextureTransform
+		{
+			resultVar			$basetexturetransform
+			scaleVar			$scale
+			rotateVar			$rotate
+			translateVar		$translate
+		}
+		
+		LinearRamp
+		{
+			rate 		0.003
+			resultVar 	$translate
+		}
+		
+		LinearRamp
+		{
+			rate 		0.03
+			resultVar 	$rotate
+		}
+
+		Sine
+		{
+			"sineperiod" 60
+			"sinemin" 2.15
+			"sinemax" 2.40
+			"timeoffset" 5
+			"resultVar" "$scale"
+		}
+		
+		//Texture2
+		TextureTransform
+		{
+			resultVar			$TEXTURE2TRANSFORM
+			scaleVar			$scale2
+			rotateVar			$rotate2
+			translateVar		$translate2
+		}
+		LinearRamp
+		{
+			rate 		-0.45
+			resultVar 	$rotate2
+		}
+	}
+}

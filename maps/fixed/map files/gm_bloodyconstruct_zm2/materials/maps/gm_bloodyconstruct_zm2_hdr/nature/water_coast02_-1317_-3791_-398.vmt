@@ -1,0 +1,11 @@
+"patch"
+{
+	"include"		"materials/NATURE/WATER_COAST02.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/gm_bloodyconstruct_zm2_hdr/c-1317_-3791_-398"
+		"Proxies"
+		{
+		}
+	}
+}

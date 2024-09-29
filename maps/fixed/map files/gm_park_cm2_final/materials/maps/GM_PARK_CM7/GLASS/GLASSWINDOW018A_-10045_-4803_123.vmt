@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/GLASS/GLASSWINDOW018A.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/gm_park_cm7/c-10045_-4803_123"
+	}
+}

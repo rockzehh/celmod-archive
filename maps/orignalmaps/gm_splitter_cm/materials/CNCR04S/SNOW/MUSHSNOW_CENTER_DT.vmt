@@ -1,0 +1,8 @@
+"lightmappedgeneric"
+{
+	"$basetexture" "cncr04s/snow/mushsnow_center"
+	"$surfaceprop" "snow"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.03"
+	"$keywords" "snow"
+}

@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$baseTexture" "props/rubberroof002a"
+	"$surfaceprop" "rubber"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.03"
+}

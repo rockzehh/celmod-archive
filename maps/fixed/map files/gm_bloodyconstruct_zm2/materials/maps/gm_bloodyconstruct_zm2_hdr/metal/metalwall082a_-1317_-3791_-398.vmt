@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/METAL/METALWALL082A.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/gm_bloodyconstruct_cm2/c-1317_-3791_-398"
+	}
+}

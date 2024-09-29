@@ -1,0 +1,10 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "wood/woodburnt001a"
+	//"$selfillum" 1
+	"$surfaceprop" "wood"
+	"$detail" "detail/noise_detail_01"
+	"$detailscale" "7.74"
+	"$detailblendfactor" "1.8"
+	"$detailblendmode" "0"
+}

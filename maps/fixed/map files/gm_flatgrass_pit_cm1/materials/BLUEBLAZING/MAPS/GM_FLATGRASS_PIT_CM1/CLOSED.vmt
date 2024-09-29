@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "blueblazing/maps/gm_flatgrass_pit_cm1/closed"
+	"$bumpmap" "blueblazing/maps/gm_flatgrass_pit_cm1/closed_norm"
+}

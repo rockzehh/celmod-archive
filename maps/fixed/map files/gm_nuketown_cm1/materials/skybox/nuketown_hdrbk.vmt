@@ -1,0 +1,7 @@
+"Sky"
+{
+	"$hdrbaseTexture"	"skybox/nuketown_hdrbk"
+	"$baseTexture" 		"skybox/nuketownBK"
+	"$nofog" 		1
+	"$ignorez" 		1
+}

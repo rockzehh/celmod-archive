@@ -1,0 +1,8 @@
+"lightmappedGeneric"
+{
+	"$baseTexture" "de_prodigy/floor02"
+	"$surfaceprop" "concrete"
+	"$detail" "models/props/de_port/clouds"
+	"$detailscale" "0.03"
+	"%keywords" "cstrike" 
+}

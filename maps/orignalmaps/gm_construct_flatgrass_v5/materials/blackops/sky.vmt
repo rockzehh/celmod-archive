@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "blackops/sky"
+	"$translucent" 1
+	"$decal" 1
+}

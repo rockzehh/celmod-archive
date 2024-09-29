@@ -1,0 +1,11 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"cncr04s/brick/normndybrik1c"
+	"$surfaceprop"	"flesh"
+	"$nodecal" "1"
+
+	"$detail" "detail/metal_detail_01"
+	"$detailscale" "4.283"
+	"$detailblendfactor" ".65"
+	"$detailblendmode" "0"
+}

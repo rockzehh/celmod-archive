@@ -1,0 +1,16 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\celmod\xmastree\bauble"
+	"$surfaceprop" "metal"
+
+	"$selfillum" "1"
+	"$phong" "1"
+	"$phongexponent" "15"
+	"$phongboost" "1"	
+	"$phongfresnelranges"	"[2 0 2]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "2"
+	"$rimlightboost" "1"	
+}
