@@ -1,0 +1,1 @@
+These files are already pre-compressed and ready to use for a fast-dl servers.
