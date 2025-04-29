@@ -42,10 +42,10 @@ char g_sTempString[64];
 char g_sToolSound[32];
 char g_sUndoQue[33][1000][64];
 
-float copyDist[33][3];
-float CPAngles[33][3];
-float EntAng[3];
-float grabDist[33][3];
+float g_fCopyDist[33][3];
+float g_fCPAngles[33][3];
+float g_fEntAng[3];
+float g_fGrabDist[33][3];
 float LightTime[33];
 float musicTime[3000];
 float PasteTime[33];
@@ -249,7 +249,7 @@ int changeBeam(int client, int Ent)
 		TR_GetEndPosition(EndOrigin, TraceRay);
 		TE_SetupBeamPoints(FinalCOrigin, EndOrigin, PhysBeam, HaloSprite, 0, 15, 0.1, 4, 4, 1, 0, physWhite, 10);
 		TE_SendToAll(0);
-		TE_SetupSparks(EndOrigin, EntAng, 3, 2);
+		TE_SetupSparks(EndOrigin, g_fEntAng, 3, 2);
 		TE_SendToAll(0);
 		randomSound = GetRandomInt(0, 1);
 		switch (randomSound)
@@ -1039,7 +1039,7 @@ public Action Command_copyprop(int client, int Args)
 		CPColor[client][0][0][12] = GetEntData(cpEnt, coloroffset + 3, 1);
 		CPRenderFx[client] = GetEntProp(cpEnt, Prop_Send, "m_nRenderFX", 1);
 		CPRenderMode[client] = GetEntProp(cpEnt, Prop_Send, "m_nRenderMode", 1);
-		GetEntPropVector(cpEnt, Prop_Data, "m_angRotation", CPAngles[client][0][0]);
+		GetEntPropVector(cpEnt, Prop_Data, "m_angRotation", g_fCPAngles[client][0][0]);
 		CPSkin[client] = GetEntProp(cpEnt, Prop_Data, "m_nSkin", 1);
 		CPFlags[client] = GetEntProp(cpEnt, Prop_Data, "m_spawnflags", 1);
 		if (GetEntityMoveType(cpEnt))
@@ -1175,7 +1175,7 @@ public Action Command_pasteprop(int client, int Args)
 		if (TR_DidHit(TraceRay))
 		{
 			TR_GetEndPosition(LookOrigin, TraceRay);
-			TeleportEntity(cpEnt, LookOrigin, CPAngles[client][0][0], NULL_VECTOR);
+			TeleportEntity(cpEnt, LookOrigin, g_fCPAngles[client][0][0], NULL_VECTOR);
 			SetOwner(client, cpEnt);
 			changeBeam(client, cpEnt);
 			PasteTime[client] = GetGameTime();
@@ -2098,7 +2098,7 @@ public Action Command_straighten(int client, int args)
 	int sEnt = GetClientAimTarget(client, false);
 	if (FindOwner(client, sEnt) != -1)
 	{
-		TeleportEntity(sEnt, NULL_VECTOR, EntAng, NULL_VECTOR);
+		TeleportEntity(sEnt, NULL_VECTOR, g_fEntAng, NULL_VECTOR);
 	}
 	else
 	{
@@ -2727,9 +2727,9 @@ public Action Command_startMove(int client, int args)
 			SetEntityRenderColor(moveEnt, 128, 255, 0, 128);
 			grabEntM[client] = GetEntityMoveType(moveEnt);
 			SetEntityMoveType(moveEnt, MoveType0);
-			grabDist[client][0][0][0] = FloatSub(clientOrgn[0], entOrgn[0]);
-			grabDist[client][0][0][4] = FloatSub(clientOrgn[4], entOrgn[4]);
-			grabDist[client][0][0][8] = FloatSub(clientOrgn[8], entOrgn[8]);
+			g_fGrabDist[client][0][0][0] = FloatSub(clientOrgn[0], entOrgn[0]);
+			g_fGrabDist[client][0][0][4] = FloatSub(clientOrgn[4], entOrgn[4]);
+			g_fGrabDist[client][0][0][8] = FloatSub(clientOrgn[8], entOrgn[8]);
 			clientGrab[client] = CreateTimer(0.1, startGrab, client, 1);
 		}
 		else
@@ -2746,10 +2746,10 @@ public Action startGrab(Handle timer, any client)
 		float cOrgn[3];
 		float eOrgn[3];
 		GetClientAbsOrigin(client, cOrgn);
-		eOrgn[0] = FloatSub(cOrgn[0], grabDist[client][0][0][0]);
-		eOrgn[4] = FloatSub(cOrgn[4], grabDist[client][0][0][4]);
-		eOrgn[8] = FloatSub(cOrgn[8], grabDist[client][0][0][8]);
-		TeleportEntity(grabEnt[client][0][0], eOrgn, NULL_VECTOR, EntAng);
+		eOrgn[0] = FloatSub(cOrgn[0], g_fGrabDist[client][0][0][0]);
+		eOrgn[4] = FloatSub(cOrgn[4], g_fGrabDist[client][0][0][4]);
+		eOrgn[8] = FloatSub(cOrgn[8], g_fGrabDist[client][0][0][8]);
+		TeleportEntity(grabEnt[client][0][0], eOrgn, NULL_VECTOR, g_fEntAng);
 	}
 	else
 	{
@@ -3146,12 +3146,12 @@ public Action Command_startCopy(int client, int Args)
 		SetEntityMoveType(newEnt, MoveType0);
 		AcceptEntityInput(newEnt, "disablemotion", -1, -1, 0);
 		SetEntityRenderColor(newEnt, 40, 40, 255, 128);
-		TeleportEntity(newEnt, entOrgn, angRot, EntAng);
+		TeleportEntity(newEnt, entOrgn, angRot, g_fEntAng);
 		float COrigin[3];
 		GetClientAbsOrigin(client, COrigin);
-		copyDist[client][0][0][0] = FloatSub(COrigin[0], entOrgn[0]);
-		copyDist[client][0][0][4] = FloatSub(COrigin[4], entOrgn[4]);
-		copyDist[client][0][0][8] = FloatSub(COrigin[8], entOrgn[8]);
+		g_fCopyDist[client][0][0][0] = FloatSub(COrigin[0], entOrgn[0]);
+		g_fCopyDist[client][0][0][4] = FloatSub(COrigin[4], entOrgn[4]);
+		g_fCopyDist[client][0][0][8] = FloatSub(COrigin[8], entOrgn[8]);
 		SetOwner(client, newEnt);
 		copyEnt[client] = newEnt;
 		copyGrab[client] = CreateTimer(0.1, copyAction, client, 1);
@@ -3169,10 +3169,10 @@ public Action copyAction(Handle timer, any client)
 		float cOrgn[3];
 		float eOrgn[3];
 		GetClientAbsOrigin(client, cOrgn);
-		eOrgn[0] = FloatSub(cOrgn[0], copyDist[client][0][0][0]);
-		eOrgn[4] = FloatSub(cOrgn[4], copyDist[client][0][0][4]);
-		eOrgn[8] = FloatSub(cOrgn[8], copyDist[client][0][0][8]);
-		TeleportEntity(copyEnt[client][0][0], eOrgn, NULL_VECTOR, EntAng);
+		eOrgn[0] = FloatSub(cOrgn[0], g_fCopyDist[client][0][0][0]);
+		eOrgn[4] = FloatSub(cOrgn[4], g_fCopyDist[client][0][0][4]);
+		eOrgn[8] = FloatSub(cOrgn[8], g_fCopyDist[client][0][0][8]);
+		TeleportEntity(copyEnt[client][0][0], eOrgn, NULL_VECTOR, g_fEntAng);
 	}
 	else
 	{
@@ -3590,7 +3590,7 @@ public Action Command_autoStack(int client, int args)
 				int var4 = originOffset[8];
 				var4 = FloatAdd(var4, offsets[8]);
 			}
-			TeleportEntity(copies, originOffset, angRot, EntAng);
+			TeleportEntity(copies, originOffset, angRot, g_fEntAng);
 			SetOwner(client, copies);
 			sAmount += 1;
 			copies++;
