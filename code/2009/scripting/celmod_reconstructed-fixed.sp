@@ -1,3 +1,11 @@
+#include <sourcemod>
+#include <sdktools>
+#include <sdkhooks>
+
+#pragma newdecls required
+
+#define MAXENTITIES 2048;
+
 ConVar g_cvNoclipSpeed;
 ConVar g_cvCheats;
 ConVar g_cvLightCvar;
@@ -14,25 +22,25 @@ ConVar g_cvProtectMap;
 int g_iEntDissolve;
 int g_iEntIgnite;
 
-int iRedColor[4] =  { 255, 0, 0, 200 };
-int iOrangeColor[4] =  { 255, 128, 0, 200 };
-int iYellowColor[4] =  { 255, 255, 0, 200 };
-int iGreenColor[4] =  { 0, 255, 0, 200 };
-int iBlueColor[4] =  { 0, 0, 255, 200 };
-int iWhiteColor[4] =  { 255, 255, 255, 200 };
-int iGreyColor[4] =  { 255, 255, 255, 30 };
+int g_iRedColor[4] =  { 255, 0, 0, 200 };
+int g_iOrangeColor[4] =  { 255, 128, 0, 200 };
+int g_iYellowColor[4] =  { 255, 255, 0, 200 };
+int g_iGreenColor[4] =  { 0, 255, 0, 200 };
+int g_iBlueColor[4] =  { 0, 0, 255, 200 };
+int g_iWhiteColor[4] =  { 255, 255, 255, 200 };
+int g_iGreyColor[4] =  { 255, 255, 255, 30 };
 
 bool g_bCheatsOn;
-bool g_bCopyFrozen[33];
-bool g_bCPBreakable[33];
-bool g_bCPFrozen[33];
-bool g_bStartCP[33];
+bool g_bCopyFrozen[MAXPLAYERS + 1];
+bool g_bCPBreakable[MAXPLAYERS + 1];
+bool g_bCPFrozen[MAXPLAYERS + 1];
+bool g_bStartCP[MAXPLAYERS + 1];
 
 char g_sClientPrefsPath[32];
-char g_sCPClass[33][8];
-char g_sCPModel[33][32];
-char g_sEntMusicPath[3000][64];
-char g_sEntSoundPath[3000][64];
+char g_sCPClass[MAXPLAYERS + 1][8];
+char g_sCPModel[MAXPLAYERS + 1][32];
+char g_sEntMusicPath[MAXENTITIES + 1][64];
+char g_sEntSoundPath[MAXENTITIES + 1][64];
 char g_sNPCTag[32] = "npc_";
 char g_sPlayerTag[32] = "player";
 char g_sPropErrorPath[32];
@@ -40,122 +48,123 @@ char g_sPropPath[32];
 char g_sSoundPath[32];
 char g_sTempString[64];
 char g_sToolSound[32];
-char g_sUndoQue[33][1000][64];
+char g_sUndoQue[MAXPLAYERS + 1][1000][64];
 
-float g_fCopyDist[33][3];
-float g_fCPAngles[33][3];
+float g_fCopyDist[MAXPLAYERS + 1][3];
+float g_fCPAngles[MAXPLAYERS + 1][3];
 float g_fEntAng[3];
-float g_fGrabDist[33][3];
-float LightTime[33];
-float musicTime[3000];
-float PasteTime[33];
-float SoundTime[33];
-float soundTime[3000];
-float SpawnpropTime[33];
+float g_fGrabDist[MAXPLAYERS + 1][3];
+float g_fLightTime[MAXPLAYERS + 1];
+float g_fMusicTime[MAXENTITIES + 1];
+float g_fPasteTime[MAXPLAYERS + 1];
+float g_fSoundTime[MAXPLAYERS + 1];
+float g_fSoundTime2[MAXENTITIES + 1];
+float g_fSpawnpropTime[MAXPLAYERS + 1];
 
-Handle clientGrab[33];
-Handle copyGrab[33];
-Handle vehicleTimer[33];
+Handle g_hClientGrab[MAXPLAYERS + 1];
+Handle g_hCopyGrab[MAXPLAYERS + 1];
+Handle g_hVehicleTimer[MAXPLAYERS + 1];
 
-int BeamSprite;
-int blockMsgs[33];
-int copyEntColor[33][4];
-int copyEnt[33];
-int CPColor[33][4];
-int CPFlags[33];
-int CPRenderFx[33];
-int CPRenderMode[33];
-int CPSkin[33];
-int grabEntColor[33][4];
-int grabEnt[33];
-int HaloSprite;
-int LaserSprite;
-int lightCount;
-int lightNum;
-int LookingProp[33];
-int maxPlayersU;
-int NPCAllCount;
-int PhysBeam;
-int ViewProp[33];
+int g_iBeamSprite;
+int g_iBlockMsgs[MAXPLAYERS + 1];
+int g_iCopyEntColor[MAXPLAYERS + 1][4];
+int g_iCopyEnt[MAXPLAYERS + 1];
+int g_iCPColor[MAXPLAYERS + 1][4];
+int g_iCPFlags[MAXPLAYERS + 1];
+int g_iCPRenderFx[MAXPLAYERS + 1];
+int g_iCPRenderMode[MAXPLAYERS + 1];
+int g_iCPSkin[MAXPLAYERS + 1];
+int g_iGrabEntColor[MAXPLAYERS + 1][4];
+int g_iGrabEnt[MAXPLAYERS + 1];
+int g_iHaloSprite;
+int g_iLaserSprite;
+int g_iLightCount;
+int g_iLightNum;
+int g_iLookingProp[MAXPLAYERS + 1];
+int g_iMaxPlayersU;
+int g_iNPCAllCount;
+int g_iPhysBeam;
+int g_iViewProp[MAXPLAYERS + 1];
 
-MoveType copyMovetype[33];
-MoveType grabEntM[33];
-MoveType oldMove[33];
+MoveType g_mtCopyMovetype[MAXPLAYERS + 1];
+MoveType g_mtGrabEntM[MAXPLAYERS + 1];
+MoveType g_mtOldMove[MAXPLAYERS + 1];
 
-#pragma newdecls required
-public Plugin myinfo = 
+public g_iPlugin myinfo =
 {
-	name = "|CelMod|", 
-	description = "Various commands used for build/cheat servers.", 
-	author = "Celsius", 
-	version = "1.3.0.0", 
+	name = "|CelMod|",
+	description = "Various commands used for build/cheat servers.",
+	author = "Celsius",
+	version = "1.3.0.0",
 	url = "www.avmserver.weebly.com"
 };
 public int OnPluginStart()
 {
-	RegAdminCmd("v_custom_spawn", Command_ent, 4096, "Creates an entity with specified keyvalues. Pros only.", "", 0);
-	RegAdminCmd("v_advisor", Command_advisor, 32, "Creates an advisor.", "", 0);
-	RegAdminCmd("v_give", Command_giveOwner, 8, "Gives ownership of an entity to someone.", "", 0);
-	RegAdminCmd("v_autobuild", Command_autoStack, 8, "Creates multiple copies of the entity you're looking at in specified frequencies.", "", 0);
-	RegConsoleCmd("v_spawn", Command_spawnprop, "Spawns a prop by alias.", 0);
-	RegConsoleCmd("v_count", Command_propCount, "Shows your prop count.", 0);
-	RegConsoleCmd("v_sound", Command_sound, "Creates a sound emitter.", 0);
-	RegConsoleCmd("v_proplist", Command_proplist, "Brings up the list of props.", 0);
-	RegConsoleCmd("v_soundlist", Command_soundlist, "Brings up the list of sounds.", 0);
-	RegConsoleCmd("v_musiclist", Command_musiclist, "Brings up the list of music.", 0);
-	RegConsoleCmd("v_preview", Command_previewprop, "Previews a prop to a player.", 0);
-	RegConsoleCmd("+v_forward", Command_vehicleStart, "test", 0);
-	RegConsoleCmd("-v_forward", Command_vehicleStop, "test", 0);
-	RegConsoleCmd("+v_back", Command_vehicleStartBack, "test", 0);
-	RegConsoleCmd("-v_back", Command_vehicleStop, "test", 0);
-	RegConsoleCmd("v_copy", Command_copyprop, "Stores a prop in the player's copy queue.", 0);
-	RegConsoleCmd("v_paste", Command_pasteprop, "Spawns the prop in the player's copy queue.", 0);
-	RegConsoleCmd("v_npc", Command_npccreate, "Creates an npc.", 0);
-	RegConsoleCmd("v_ladder", Command_ladder, "Creates a working ladder.", 0);
-	RegConsoleCmd("v_showmsgs", Command_msgs, "Decides wether to show ent messages when using commands(v_freeze, v_remove, etc.)", 0);
-	RegConsoleCmd("v_remove", Command_remove, "Removes props.", 0);
-	RegConsoleCmd("v_undo", Command_undoRemove, "Undo function for use with v_remove.", 0);
-	RegConsoleCmd("v_freeze", Command_freeze, "Freezes the entity you're looking at.", 0);
-	RegConsoleCmd("v_unfreeze", Command_unfreeze, "Unfreezes the entity you're looking at.", 0);
-	RegConsoleCmd("v_skin", Command_skin, "Changes the skin of the entity you're looking at.", 0);
-	RegConsoleCmd("v_door", Command_door, "Creates a working door.", 0);
-	RegConsoleCmd("v_straight", Command_straighten, "Straightens the prop.", 0);
-	RegConsoleCmd("v_setscene", Command_scene, "Sets the choreographed scene for an NPC.", 0);
-	RegConsoleCmd("v_relationship", Command_relationship, "Sets the relationship of an NPC.", 0);
-	RegConsoleCmd("v_airboat", Command_airboat, "Creates an airboat.", 0);
-	RegConsoleCmd("v_gun", Command_airboatgun, "Turns the airboat gun on or off.", 0);
-	RegConsoleCmd("v_ignite", Command_ignite, "Ignites the entity for x seconds.", 0);
-	RegConsoleCmd("v_jeep", Command_jeep, "Turns an airboat into a jeep.", 0);
-	RegConsoleCmd("v_god", Command_god, "Turns invincibility on or off of props.", 0);
-	RegConsoleCmd("v_spawnpod", Command_pod, "Creates a pod vehicle out of the prop you're looking at.", 0);
-	RegConsoleCmd("v_color", Command_color, "Colors the entity you're looking at.", 0);
-	RegConsoleCmd("v_axis", Command_mark, "Creates a marker showing every axis.", 0);
-	RegConsoleCmd("v_spawnlight", Command_lightcreate, "Creates a moveable light.", 0);
-	RegConsoleCmd("v_solid", Command_solidity, "Turns solidity on the prop on or off.", 0);
-	RegConsoleCmd("v_music", Command_music, "Creates a music emitting radio.", 0);
-	RegConsoleCmd("v_amt", Command_alpha, "Modifies entity alpha transparency.", 0);
-	RegConsoleCmd("v_rotate", Command_rotate, "Rotates an entity. Supports doors.", 0);
-	RegConsoleCmd("v_owned", Command_whoowns, "Finds out who owns the picker entity.", 0);
-	RegConsoleCmd("+move", Command_startMove, "Makes the entity you're looking at follow you.", 0);
-	RegConsoleCmd("-move", Command_stopMove, "Stops moving the entity.", 0);
-	RegConsoleCmd("+copy", Command_startCopy, "Copies an entity and makes it follow you.", 0);
-	RegConsoleCmd("-copy", Command_stopCopy, "Stops moving copied entity.", 0);
-	RegConsoleCmd("say", Command_stopcmd, "Used for the stop command on v_preview.", 0);
-	CreateConVar("celmod", "1", "Notification that the server is running celmod(for use with game-monitor,etc.)", 395584, false, 0, false, 0);
-	g_cvLightCvar = CreateConVar("cm_max_lights", "10", "Maxiumum number of lights allowed on map.", 264512, false, 0, false, 0);
-	g_cvNPCCvar = CreateConVar("cm_max_npcs", "100", "Maxiumum number of NPCs allowed on map.", 264512, false, 0, false, 0);
-	g_cvMaxCelsClient = CreateConVar("cm_max_player_cels", "50", "Maxiumum number of CelMod entities a client is allowed.", 264512, false, 0, false, 0);
-	g_cvMaxNPCsClient = CreateConVar("cm_max_player_npcs", "20", "Maxiumum number of NPCs a client is allowed.", 264512, false, 0, false, 0);
-	g_cvMaxPropsClient = CreateConVar("cm_max_player_props", "300", "Maxiumum number of props a player is allowed to spawn.", 264512, false, 0, false, 0);
-	g_cvMaxBreakablesClient = CreateConVar("cm_max_player_breakables", "100", "Maxiumum number of breakable props a player is allowed to spawn.", 264512, false, 0, false, 0);
-	g_cvMaxVehiclesClient = CreateConVar("cm_max_player_vehicles", "5", "Maxiumum number of vehicles a player is allowed.", 264512, false, 0, false, 0);
-	g_cvRemoveDisc = CreateConVar("cm_remove_on_disconnect", "1", "Decides wether to remove the players entities on disconnect.", 264512, false, 0, false, 0);
-	g_cvFakeZom = CreateConVar("cm_fake_zombies", "1", "Decides wether to spawn fake zombies (used to prevent Windows from crashing)", 264512, false, 0, false, 0);
-	g_cvProtectMap = CreateConVar("cm_protect_map_props", "0", "Map start only. Protects all the map entities from celmod commands.", 264512, false, 0, false, 0);
-	CreateConVar("celmod_version", "1.1", "CelMod Version", 395584, false, 0, false, 0);
+	RegAdminCmd("v_custom_spawn", Command_ent, ADMFLAG_ROOT, "Creates an entity with specified keyvalues. Pros only.");
+	RegAdminCmd("v_advisor", Command_advisor, ADMFLAG_BAN, "Creates an advisor.");
+	RegAdminCmd("v_give", Command_giveOwner, ADMFLAG_SLAY, "Gives ownership of an entity to someone.");
+	RegAdminCmd("v_autobuild", Command_autoStack, ADMFLAG_SLAY, "Creates multiple copies of the entity you're looking at in specified frequencies.");
+	
+	RegConsoleCmd("v_spawn", Command_spawnprop, "Spawns a prop by alias.");
+	RegConsoleCmd("v_count", Command_propCount, "Shows your prop count.");
+	RegConsoleCmd("v_sound", Command_sound, "Creates a sound emitter.");
+	RegConsoleCmd("v_proplist", Command_proplist, "Brings up the list of props.");
+	RegConsoleCmd("v_soundlist", Command_soundlist, "Brings up the list of sounds.");
+	RegConsoleCmd("v_musiclist", Command_musiclist, "Brings up the list of music.");
+	RegConsoleCmd("v_preview", Command_previewprop, "Previews a prop to a player.");
+	RegConsoleCmd("+v_forward", Command_vehicleStart, "test");
+	RegConsoleCmd("-v_forward", Command_vehicleStop, "test");
+	RegConsoleCmd("+v_back", Command_vehicleStartBack, "test");
+	RegConsoleCmd("-v_back", Command_vehicleStop, "test");
+	RegConsoleCmd("v_copy", Command_copyprop, "Stores a prop in the player's copy queue.");
+	RegConsoleCmd("v_paste", Command_pasteprop, "Spawns the prop in the player's copy queue.");
+	RegConsoleCmd("v_npc", Command_npccreate, "Creates an npc.");
+	RegConsoleCmd("v_ladder", Command_ladder, "Creates a working ladder.");
+	RegConsoleCmd("v_showmsgs", Command_msgs, "Decides wether to show ent messages when using commands(v_freeze, v_remove, etc.)");
+	RegConsoleCmd("v_remove", Command_remove, "Removes props.");
+	RegConsoleCmd("v_undo", Command_undoRemove, "Undo function for use with v_remove.");
+	RegConsoleCmd("v_freeze", Command_freeze, "Freezes the entity you're looking at.");
+	RegConsoleCmd("v_unfreeze", Command_unfreeze, "Unfreezes the entity you're looking at.");
+	RegConsoleCmd("v_skin", Command_skin, "Changes the skin of the entity you're looking at.");
+	RegConsoleCmd("v_door", Command_door, "Creates a working door.");
+	RegConsoleCmd("v_straight", Command_straighten, "Straightens the prop.");
+	RegConsoleCmd("v_setscene", Command_scene, "Sets the choreographed scene for an NPC.");
+	RegConsoleCmd("v_relationship", Command_relationship, "Sets the relationship of an NPC.");
+	RegConsoleCmd("v_airboat", Command_airboat, "Creates an airboat.");
+	RegConsoleCmd("v_gun", Command_airboatgun, "Turns the airboat gun on or off.");
+	RegConsoleCmd("v_ignite", Command_ignite, "Ignites the entity for x seconds.");
+	RegConsoleCmd("v_jeep", Command_jeep, "Turns an airboat into a jeep.");
+	RegConsoleCmd("v_god", Command_god, "Turns invincibility on or off of props.");
+	RegConsoleCmd("v_spawnpod", Command_pod, "Creates a pod vehicle out of the prop you're looking at.");
+	RegConsoleCmd("v_color", Command_color, "Colors the entity you're looking at.");
+	RegConsoleCmd("v_axis", Command_mark, "Creates a marker showing every axis.");
+	RegConsoleCmd("v_spawnlight", Command_lightcreate, "Creates a moveable light.");
+	RegConsoleCmd("v_solid", Command_solidity, "Turns solidity on the prop on or off.");
+	RegConsoleCmd("v_music", Command_music, "Creates a music emitting radio.");
+	RegConsoleCmd("v_amt", Command_alpha, "Modifies entity alpha transparency.");
+	RegConsoleCmd("v_rotate", Command_rotate, "Rotates an entity. Supports doors.");
+	RegConsoleCmd("v_owned", Command_whoowns, "Finds out who owns the picker entity.");
+	RegConsoleCmd("+move", Command_startMove, "Makes the entity you're looking at follow you.");
+	RegConsoleCmd("-move", Command_stopMove, "Stops moving the entity.");
+	RegConsoleCmd("+copy", Command_startCopy, "Copies an entity and makes it follow you.");
+	RegConsoleCmd("-copy", Command_stopCopy, "Stops moving copied entity.");
+	RegConsoleCmd("say", Command_stopcmd, "Used for the stop command on v_preview.");
+	
+	CreateConVar("celmod", "1", "Notification that the server is running celmod(for use with game-monitor,etc.)", 395584);
+	g_cvLightCvar = CreateConVar("cm_max_lights", "10", "Maxiumum number of lights allowed on map.", 264512);
+	g_cvNPCCvar = CreateConVar("cm_max_npcs", "100", "Maxiumum number of NPCs allowed on map.", 264512);
+	g_cvMaxCelsClient = CreateConVar("cm_max_player_cels", "50", "Maxiumum number of CelMod entities a client is allowed.", 264512);
+	g_cvMaxNPCsClient = CreateConVar("cm_max_player_npcs", "20", "Maxiumum number of NPCs a client is allowed.", 264512);
+	g_cvMaxPropsClient = CreateConVar("cm_max_player_props", "300", "Maxiumum number of props a player is allowed to spawn.", 264512);
+	g_cvMaxBreakablesClient = CreateConVar("cm_max_player_breakables", "100", "Maxiumum number of breakable props a player is allowed to spawn.", 264512);
+	g_cvMaxVehiclesClient = CreateConVar("cm_max_player_vehicles", "5", "Maxiumum number of vehicles a player is allowed.", 264512);
+	g_cvRemoveDisc = CreateConVar("cm_remove_on_disconnect", "1", "Decides wether to remove the players entities on disconnect.", 264512);
+	g_cvFakeZom = CreateConVar("cm_fake_zombies", "1", "Decides wether to spawn fake zombies (used to prevent Windows from crashing)", 264512);
+	g_cvProtectMap = CreateConVar("cm_protect_map_props", "0", "Map start only. Protects all the map entities from celmod commands.", 264512);
+	CreateConVar("celmod_version", "1.1", "CelMod Version", 395584);
 	g_cvNoclipSpeed = FindConVar("sv_noclipspeed");
 	g_cvCheats = FindConVar("sv_cheats");
-	
+
 	BuildPath(Path_SM, g_sPropPath, 64, "data/celmod/spawns.txt");
 	BuildPath(Path_SM, g_sSoundPath, 64, "data/celmod/sounds.txt");
 	BuildPath(Path_SM, g_sPropErrorPath, 64, "data/celmod/spawnerrors.txt");
@@ -219,7 +228,7 @@ int tooFast(int client)
 }
 int lookingAt(int client)
 {
-	if (!blockMsgs[client][0][0])
+	if (!g_iBlockMsgs[client][0][0])
 	{
 		cmMsg(client, "You are not looking at anything.");
 	}
@@ -247,7 +256,7 @@ int changeBeam(int client, int Ent)
 	if (TR_DidHit(TraceRay))
 	{
 		TR_GetEndPosition(EndOrigin, TraceRay);
-		TE_SetupBeamPoints(FinalCOrigin, EndOrigin, PhysBeam, HaloSprite, 0, 15, 0.1, 4, 4, 1, 0, physWhite, 10);
+		TE_SetupBeamPoints(FinalCOrigin, EndOrigin, g_iPhysBeam, g_iHaloSprite, 0, 15, 0.1, 4, 4, 1, 0, physWhite, 10);
 		TE_SendToAll(0);
 		TE_SetupSparks(EndOrigin, g_fEntAng, 3, 2);
 		TE_SendToAll(0);
@@ -495,7 +504,7 @@ int CountVehicles(int client)
 }
 int CountLights()
 {
-	lightCount = 0;
+	g_iLightCount = 0;
 	int MaxEnts = GetMaxEntities();
 	int AllE = 1;
 	while (AllE < MaxEnts)
@@ -506,18 +515,18 @@ int CountLights()
 			GetEdictClassname(AllE, cClass, 32);
 			if (StrEqual(cClass, "cel_light", false))
 			{
-				lightCount = lightCount + 1;
+				g_iLightCount = g_iLightCount + 1;
 				AllE++;
 			}
 			AllE++;
 		}
 		AllE++;
 	}
-	return lightCount;
+	return g_iLightCount;
 }
 int CountAllNPCs()
 {
-	NPCAllCount = 0;
+	g_iNPCAllCount = 0;
 	int MaxEnts = GetMaxEntities();
 	int AllE = 1;
 	while (AllE < MaxEnts)
@@ -533,7 +542,7 @@ int CountAllNPCs()
 				int var1;
 				if (StrContains(cClass, g_sNPCTag, false))
 				{
-					NPCAllCount = NPCAllCount + 1;
+					g_iNPCAllCount = g_iNPCAllCount + 1;
 					AllE++;
 				}
 				AllE++;
@@ -542,20 +551,20 @@ int CountAllNPCs()
 		}
 		AllE++;
 	}
-	return NPCAllCount;
+	return g_iNPCAllCount;
 }
 int resetCvars(int client)
 {
-	LookingProp[client] = 0;
-	ViewProp[client] = -1;
+	g_iLookingProp[client] = 0;
+	g_iViewProp[client] = -1;
 	g_bStartCP[client] = 0;
-	SpawnpropTime[client] = 0;
-	PasteTime[client] = 0;
-	LightTime[client] = 0;
-	SoundTime[client] = 0;
-	clientGrab[client] = 0;
-	copyGrab[client] = 0;
-	vehicleTimer[client] = 0;
+	g_fSpawnpropTime[client] = 0;
+	g_fPasteTime[client] = 0;
+	g_fLightTime[client] = 0;
+	g_fSoundTime[client] = 0;
+	g_hClientGrab[client] = 0;
+	g_hCopyGrab[client] = 0;
+	g_hVehicleTimer[client] = 0;
 	int I = 0;
 	while (I < 1000)
 	{
@@ -564,9 +573,9 @@ int resetCvars(int client)
 }
 public int OnMapStart()
 {
-	lightNum = 1;
-	lightCount = 0;
-	NPCAllCount = 0;
+	g_iLightNum = 1;
+	g_iLightCount = 0;
+	g_iNPCAllCount = 0;
 	SetConVarInt(g_cvNoclipSpeed, 3, true, false);
 	ServerCommand("exec skill.cfg");
 	PrecacheModel("models/advisor.mdl", false);
@@ -578,10 +587,10 @@ public int OnMapStart()
 	PrecacheModel("models/roller_spikes.mdl", false);
 	PrecacheModel("models/props_junk/popcan01a.mdl", false);
 	PrecacheModel("models/props_lab/citizenradio.mdl", false);
-	BeamSprite = PrecacheModel("materials/sprites/laserbeam.vmt", false);
-	HaloSprite = PrecacheModel("materials/sprites/halo01.vmt", false);
-	LaserSprite = PrecacheModel("materials/sprites/laser.vmt", false);
-	PhysBeam = PrecacheModel("materials/sprites/physbeam.vmt", false);
+	g_iBeamSprite = PrecacheModel("materials/sprites/laserbeam.vmt", false);
+	g_iHaloSprite = PrecacheModel("materials/sprites/halo01.vmt", false);
+	g_iLaserSprite = PrecacheModel("materials/sprites/laser.vmt", false);
+	g_iPhysBeam = PrecacheModel("materials/sprites/physbeam.vmt", false);
 	PrecacheSound("ambient/levels/citadel/weapon_disintegrate1.wav", false);
 	PrecacheSound("ambient/levels/citadel/weapon_disintegrate2.wav", false);
 	PrecacheSound("ambient/levels/citadel/weapon_disintegrate3.wav", false);
@@ -617,7 +626,7 @@ public int OnMapStart()
 			E++;
 		}
 	}
-	maxPlayersU = GetMaxClients();
+	g_iMaxPlayersU = GetMaxClients();
 }
 public int OnPluginEnd()
 {
@@ -626,18 +635,18 @@ public int OnPluginEnd()
 }
 public bool FilterPlayer(int entity, int contentsMask)
 {
-	return entity > maxPlayersU;
+	return entity > g_iMaxPlayersU;
 }
 public int useSound(char output[], int caller, int activator, float delay)
 {
-	if (soundTime[activator][0][0] < GetGameTime() - 1)
+	if (g_fSoundTime2[activator][0][0] < GetGameTime() - 1)
 	{
 		char entClass[32];
 		GetEdictClassname(activator, entClass, 32);
 		if (StrEqual(entClass, "cel_sound", false))
 		{
 			EmitSoundToAll(g_sEntSoundPath[activator][0][0], activator, 0, 75, 0, 1, 100, -1, NULL_VECTOR, NULL_VECTOR, true, 0);
-			soundTime[activator] = GetGameTime();
+			g_fSoundTime2[activator] = GetGameTime();
 		}
 	}
 }
@@ -645,14 +654,14 @@ public int useMusic(char output[], int caller, int activator, float delay)
 {
 	char mBreak[16][128];
 	ExplodeString(g_sEntMusicPath[activator][0][0], "|", mBreak, 4, 128);
-	if (musicTime[activator][0][0] < GetGameTime() - StringToInt(mBreak[4], 10))
+	if (g_fMusicTime[activator][0][0] < GetGameTime() - StringToInt(mBreak[4], 10))
 	{
 		char entClass[32];
 		GetEdictClassname(activator, entClass, 32);
 		if (StrEqual(entClass, "cel_music", false))
 		{
 			EmitSoundToAll(mBreak[0][mBreak], activator, 0, StringToInt(mBreak[8], 10), 0, 1, 100, -1, NULL_VECTOR, NULL_VECTOR, true, 0);
-			musicTime[activator] = GetGameTime();
+			g_fMusicTime[activator] = GetGameTime();
 			if (StringToInt(mBreak[12], 10) == 1)
 			{
 				CreateTimer(StringToFloat(mBreak[4]), replaySound, activator, 0);
@@ -662,7 +671,7 @@ public int useMusic(char output[], int caller, int activator, float delay)
 	else
 	{
 		StopSound(activator, 0, mBreak[0][mBreak]);
-		musicTime[activator] = 0;
+		g_fMusicTime[activator] = 0;
 	}
 }
 public Action replaySound(Handle timer, any activator)
@@ -763,7 +772,7 @@ public Action Command_spawnprop(int client, int Args)
 		ReplyToCommand(client, "Type 'v_proplist' or say 'celprops' for a list of prop aliases.");
 		return Plugin_Handled;
 	}
-	if (SpawnpropTime[client][0][0] <= GetGameTime() - 1)
+	if (g_fSpawnpropTime[client][0][0] <= GetGameTime() - 1)
 	{
 		char propAlias[256];
 		char propBool[32];
@@ -880,13 +889,13 @@ public Action Command_spawnprop(int client, int Args)
 		SpawnAngles[4] = CEyeAngles[4] + 180;
 		TeleportEntity(propEnt, SpawnOrigin, SpawnAngles, NULL_VECTOR);
 		SetOwner(client, propEnt);
-		SpawnpropTime[client] = GetGameTime();
+		g_fSpawnpropTime[client] = GetGameTime();
 		CloseHandle(Props);
 	}
 	else
 	{
 		tooFast(client);
-		int var1 = SpawnpropTime[client];
+		int var1 = g_fSpawnpropTime[client];
 		var1 = var1[0][0] + 1;
 	}
 	SetCmdReplySource(ReplySource0);
@@ -918,9 +927,9 @@ public Action Command_previewprop(int client, int Args)
 		PrintToConsole(client, "Type 'v_proplist' for a list of prop aliases.");
 		return Plugin_Handled;
 	}
-	if (LookingProp[client][0][0])
+	if (g_iLookingProp[client][0][0])
 	{
-		if (LookingProp[client][0][0] == 1)
+		if (g_iLookingProp[client][0][0] == 1)
 		{
 			cmMsg(client, "You are already viewing a prop.");
 			cmMsg(client, "Type \"stop\" in chat to stop viewing.");
@@ -997,8 +1006,8 @@ public Action Command_previewprop(int client, int Args)
 	DispatchKeyValueVector(propEnt, "origin", SpawnOrigin);
 	DispatchKeyValueVector(propEnt, "angles", SpawnAngles);
 	SetOwner(client, propEnt);
-	LookingProp[client] = 1;
-	ViewProp[client] = propEnt;
+	g_iLookingProp[client] = 1;
+	g_iViewProp[client] = propEnt;
 	Format(g_sTempString, 255, "You are now viewing %s.", propAlias);
 	cmMsg(client, g_sTempString);
 	cmMsg(client, "Type \"stop\" in chat to stop viewing.");
@@ -1011,8 +1020,8 @@ public Action Command_stopcmd(int client, int Args)
 	int var1;
 	if (StrEqual(check, "stop", false))
 	{
-		LookingProp[client] = 0;
-		RemoveEdict(ViewProp[client][0][0]);
+		g_iLookingProp[client] = 0;
+		RemoveEdict(g_iViewProp[client][0][0]);
 		return Plugin_Handled;
 	}
 	return Plugin_Continue;
@@ -1033,15 +1042,15 @@ public Action Command_copyprop(int client, int Args)
 		GetEdictClassname(cpEnt, g_sCPClass[client][0][0], 32);
 		GetEntPropString(cpEnt, Prop_Data, "m_ModelName", g_sCPModel[client][0][0], 128);
 		int coloroffset = GetEntSendPropOffs(cpEnt, "m_clrRender", false);
-		CPColor[client][0][0][0] = GetEntData(cpEnt, coloroffset, 1);
-		CPColor[client][0][0][4] = GetEntData(cpEnt, coloroffset + 1, 1);
-		CPColor[client][0][0][8] = GetEntData(cpEnt, coloroffset + 2, 1);
-		CPColor[client][0][0][12] = GetEntData(cpEnt, coloroffset + 3, 1);
-		CPRenderFx[client] = GetEntProp(cpEnt, Prop_Send, "m_nRenderFX", 1);
-		CPRenderMode[client] = GetEntProp(cpEnt, Prop_Send, "m_nRenderMode", 1);
+		g_iCPColor[client][0][0][0] = GetEntData(cpEnt, coloroffset, 1);
+		g_iCPColor[client][0][0][4] = GetEntData(cpEnt, coloroffset + 1, 1);
+		g_iCPColor[client][0][0][8] = GetEntData(cpEnt, coloroffset + 2, 1);
+		g_iCPColor[client][0][0][12] = GetEntData(cpEnt, coloroffset + 3, 1);
+		g_iCPRenderFx[client] = GetEntProp(cpEnt, Prop_Send, "m_nRenderFX", 1);
+		g_iCPRenderMode[client] = GetEntProp(cpEnt, Prop_Send, "m_nRenderMode", 1);
 		GetEntPropVector(cpEnt, Prop_Data, "m_angRotation", g_fCPAngles[client][0][0]);
-		CPSkin[client] = GetEntProp(cpEnt, Prop_Data, "m_nSkin", 1);
-		CPFlags[client] = GetEntProp(cpEnt, Prop_Data, "m_spawnflags", 1);
+		g_iCPSkin[client] = GetEntProp(cpEnt, Prop_Data, "m_nSkin", 1);
+		g_iCPFlags[client] = GetEntProp(cpEnt, Prop_Data, "m_spawnflags", 1);
 		if (GetEntityMoveType(cpEnt))
 		{
 			g_bCPFrozen[client] = 0;
@@ -1059,7 +1068,7 @@ public Action Command_copyprop(int client, int Args)
 			g_bCPBreakable[client] = 0;
 		}
 		g_bStartCP[client] = 1;
-		if (blockMsgs[client][0][0])
+		if (g_iBlockMsgs[client][0][0])
 		{
 		}
 		else
@@ -1080,17 +1089,17 @@ public Action Command_pasteprop(int client, int Args)
 		cmMsg(client, "No prop found in copy queue.");
 		return Plugin_Handled;
 	}
-	if (PasteTime[client][0][0] <= GetGameTime() - 1)
+	if (g_fPasteTime[client][0][0] <= GetGameTime() - 1)
 	{
 		int cpEnt;
 		char cpFlags[32];
 		char cpRenderFx[32];
 		char cpRenderMode[32];
 		char cpSkin[32];
-		IntToString(CPFlags[client][0][0], cpFlags, 32);
-		IntToString(CPRenderFx[client][0][0], cpRenderFx, 32);
-		IntToString(CPRenderMode[client][0][0], cpRenderMode, 32);
-		IntToString(CPSkin[client][0][0], cpSkin, 32);
+		IntToString(g_iCPFlags[client][0][0], cpFlags, 32);
+		IntToString(g_iCPRenderFx[client][0][0], cpRenderFx, 32);
+		IntToString(g_iCPRenderMode[client][0][0], cpRenderMode, 32);
+		IntToString(g_iCPSkin[client][0][0], cpSkin, 32);
 		if (StrEqual(g_sCPClass[client][0][0], "prop_physics_breakable", false))
 		{
 			cpEnt = CreateEntityByName("prop_physics", -1);
@@ -1131,7 +1140,7 @@ public Action Command_pasteprop(int client, int Args)
 			return Plugin_Handled;
 		}
 		DispatchSpawn(cpEnt);
-		SetEntityRenderColor(cpEnt, CPColor[client][0][0][0], CPColor[client][0][0][4], CPColor[client][0][0][8], CPColor[client][0][0][12]);
+		SetEntityRenderColor(cpEnt, g_iCPColor[client][0][0][0], g_iCPColor[client][0][0][4], g_iCPColor[client][0][0][8], g_iCPColor[client][0][0][12]);
 		if (GetEntProp(cpEnt, Prop_Data, "m_takedamage", 4) == 2)
 		{
 			if (GetConVarInt(g_cvMaxBreakablesClient) <= CountBreakables(client))
@@ -1178,8 +1187,8 @@ public Action Command_pasteprop(int client, int Args)
 			TeleportEntity(cpEnt, LookOrigin, g_fCPAngles[client][0][0], NULL_VECTOR);
 			SetOwner(client, cpEnt);
 			changeBeam(client, cpEnt);
-			PasteTime[client] = GetGameTime();
-			if (!blockMsgs[client][0][0])
+			g_fPasteTime[client] = GetGameTime();
+			if (!g_iBlockMsgs[client][0][0])
 			{
 				cmMsg(client, "Pasted physics prop.");
 			}
@@ -1189,7 +1198,7 @@ public Action Command_pasteprop(int client, int Args)
 	else
 	{
 		tooFast(client);
-		int var1 = PasteTime[client];
+		int var1 = g_fPasteTime[client];
 		var1 = var1[0][0] + 1;
 	}
 	return Plugin_Handled;
@@ -1198,7 +1207,7 @@ public Action Command_msgs(int client, int Args)
 {
 	if (Args < 1)
 	{
-		PrintToConsole(client, "\"v_showmsgs\" = \"%d\", blockMsgs[client]");
+		PrintToConsole(client, "\"v_showmsgs\" = \"%d\", g_iBlockMsgs[client]");
 		PrintToConsole(client, " - Decides wether to show unnecessary messages when using CelMod commands.");
 		return Plugin_Handled;
 	}
@@ -1209,10 +1218,10 @@ public Action Command_msgs(int client, int Args)
 	GetCmdArg(1, toggle, 2);
 	if (StrEqual(toggle, "1", false))
 	{
-		if (blockMsgs[client][0][0] == 1)
+		if (g_iBlockMsgs[client][0][0] == 1)
 		{
 			GetClientAuthString(client, steamID, 255);
-			blockMsgs[client] = 0;
+			g_iBlockMsgs[client] = 0;
 			SaveString(CPrefs, "BlockMsgs", steamID, "0");
 			cmMsg(client, "Messages will now be shown.");
 		}
@@ -1224,14 +1233,14 @@ public Action Command_msgs(int client, int Args)
 	}
 	if (StrEqual(toggle, "0", false))
 	{
-		if (blockMsgs[client][0][0])
+		if (g_iBlockMsgs[client][0][0])
 		{
 			cmMsg(client, "Messages are already blocked.");
 		}
 		else
 		{
 			GetClientAuthString(client, steamID, 255);
-			blockMsgs[client] = 1;
+			g_iBlockMsgs[client] = 1;
 			SaveString(CPrefs, "BlockMsgs", steamID, "1");
 			cmMsg(client, "Messages will now be blocked.");
 		}
@@ -1363,7 +1372,7 @@ public Action Command_npccreate(int client, int Args)
 			{
 				DispatchKeyValue(NPC, "classname", "npc_fastzombie_cel");
 			}
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -1391,7 +1400,7 @@ public Action Command_lightcreate(int client, int Args)
 		cmMsg(client, "Reached server light maximum.");
 		return Plugin_Handled;
 	}
-	if (LightTime[client][0][0] <= GetGameTime() - 1)
+	if (g_fLightTime[client][0][0] <= GetGameTime() - 1)
 	{
 		int lightProp;
 		int light;
@@ -1416,9 +1425,9 @@ public Action Command_lightcreate(int client, int Args)
 		DispatchKeyValue(lightProp, "classname", "cel_light");
 		char lightName[32];
 		char lightOutput[32];
-		Format(lightName, 32, "light_%d", lightNum);
+		Format(lightName, 32, "light_%d", g_iLightNum);
 		Format(lightOutput, 32, "%s,toggle,,0,-1", lightName);
-		lightNum = lightNum + 1;
+		g_iLightNum = g_iLightNum + 1;
 		DispatchKeyValue(light, "targetname", lightName);
 		DispatchKeyValue(lightProp, "OnPlayerUse", lightOutput);
 		if (0 < Args)
@@ -1449,8 +1458,8 @@ public Action Command_lightcreate(int client, int Args)
 		LOrigin[8] = COrigin[8] + 25;
 		TeleportEntity(lightProp, LOrigin, NULL_VECTOR, NULL_VECTOR);
 		SetOwner(client, lightProp);
-		LightTime[client] = GetGameTime();
-		if (blockMsgs[client][0][0])
+		g_fLightTime[client] = GetGameTime();
+		if (g_iBlockMsgs[client][0][0])
 		{
 		}
 		else
@@ -1461,7 +1470,7 @@ public Action Command_lightcreate(int client, int Args)
 	else
 	{
 		tooFast(client);
-		int var1 = LightTime[client];
+		int var1 = g_fLightTime[client];
 		var1 = FloatAdd(1, var1[0][0]);
 	}
 	return Plugin_Handled;
@@ -1780,10 +1789,10 @@ public Action Command_remove(int client, int args)
 				{
 					char mBreak[12][128];
 					ExplodeString(g_sEntMusicPath[Ent2][0][0], "|", mBreak, 3, 128);
-					if (musicTime[Ent2][0][0] >= GetGameTime() - StringToInt(mBreak[4], 10))
+					if (g_fMusicTime[Ent2][0][0] >= GetGameTime() - StringToInt(mBreak[4], 10))
 					{
 						StopSound(Ent2, 0, mBreak[0][mBreak]);
-						musicTime[Ent2] = 0;
+						g_fMusicTime[Ent2] = 0;
 					}
 				}
 			}
@@ -1808,9 +1817,9 @@ public Action Command_remove(int client, int args)
 				default: {
 				}
 			}
-			TE_SetupBeamPoints(clientOrigin, EntOrigin, LaserSprite, HaloSprite, 0, 15, 0.25, 15, 15, 1, 0, greyColor, 10);
+			TE_SetupBeamPoints(clientOrigin, EntOrigin, g_iLaserSprite, g_iHaloSprite, 0, 15, 0.25, 15, 15, 1, 0, greyColor, 10);
 			TE_SendToAll(0);
-			TE_SetupBeamRingPoint(EntOrigin, 10, 60, BeamSprite, HaloSprite, 0, 15, 0.5, 5, 0, greyColor, 10, 0);
+			TE_SetupBeamRingPoint(EntOrigin, 10, 60, g_iBeamSprite, g_iHaloSprite, 0, 15, 0.5, 5, 0, greyColor, 10, 0);
 			TE_SendToAll(0);
 			EmitAmbientSound(BeamSound, EntOrigin, Ent2, 100, 0, 1, 100, 0);
 			int var3;
@@ -1835,7 +1844,7 @@ public Action Command_remove(int client, int args)
 			{
 				CreateTimer(0.1, dissolveDelay, client, 0);
 			}
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -1880,7 +1889,7 @@ public Action Command_freeze(int client, int args)
 		{
 			changeBeam(client, Ent2);
 			AcceptEntityInput(Ent2, "Lock", -1, -1, 0);
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -1893,7 +1902,7 @@ public Action Command_freeze(int client, int args)
 			changeBeam(client, Ent2);
 			SetEntityMoveType(Ent2, MoveType0);
 			AcceptEntityInput(Ent2, "disablemotion", -1, -1, 0);
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -1933,7 +1942,7 @@ public Action Command_unfreeze(int client, int args)
 			{
 				changeBeam(client, Ent2);
 				AcceptEntityInput(Ent2, "Unlock", -1, -1, 0);
-				if (blockMsgs[client][0][0])
+				if (g_iBlockMsgs[client][0][0])
 				{
 				}
 				else
@@ -1944,7 +1953,7 @@ public Action Command_unfreeze(int client, int args)
 			changeBeam(client, Ent2);
 			SetEntityMoveType(Ent2, MoveType6);
 			AcceptEntityInput(Ent2, "enablemotion", -1, -1, 0);
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -1964,7 +1973,7 @@ public Action Command_unfreeze(int client, int args)
 			{
 				SetEntityMoveType(Ent2, MoveType3);
 			}
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -1983,7 +1992,7 @@ public Action Command_airboat(int client, int args)
 {
 	if (GetConVarInt(g_cvMaxVehiclesClient) > CountVehicles(client))
 	{
-		oldMove[client] = GetEntityMoveType(client);
+		g_mtOldMove[client] = GetEntityMoveType(client);
 		SetEntityMoveType(client, MoveType0);
 		if (!(GetConVarInt(g_cvCheats)))
 		{
@@ -2017,7 +2026,7 @@ public Action FindBoat(Handle timer, any client)
 		SetConVarInt(g_cvCheats, 0, false, false);
 		g_bCheatsOn = 0;
 	}
-	SetEntityMoveType(client, oldMove[client][0][0]);
+	SetEntityMoveType(client, g_mtOldMove[client][0][0]);
 	cmMsg(client, "Created airboat vehicle.");
 	return Plugin_Continue;
 }
@@ -2182,7 +2191,7 @@ public Action Command_scene(int client, int args)
 		AcceptEntityInput(scEnt, "setexpressionoverride", -1, -1, 0);
 		ExplodeString(scClassname, "_", scname, 2, 128);
 		changeBeam(client, scEnt);
-		if (!blockMsgs[client][0][0])
+		if (!g_iBlockMsgs[client][0][0])
 		{
 			Format(g_sTempString, 255, "Set the scene of %s.", scname[4]);
 			cmMsg(client, g_sTempString);
@@ -2242,7 +2251,7 @@ public Action Command_relationship(int client, int args)
 			AcceptEntityInput(rEnt, "setrelationship", -1, -1, 0);
 			changeBeam(client, rEnt);
 			ExplodeString(rClassname, "_", rname, 2, 128);
-			if (blockMsgs[client][0][0])
+			if (g_iBlockMsgs[client][0][0])
 			{
 			}
 			else
@@ -2287,7 +2296,7 @@ public Action Command_airboatgun(int client, int args)
 			if (StrEqual(aInput, "on", false))
 			{
 				SetVariantInt(1);
-				if (blockMsgs[client][0][0])
+				if (g_iBlockMsgs[client][0][0])
 				{
 					AcceptEntityInput(aEnt, "enablegun", -1, -1, 0);
 					changeBeam(client, aEnt);
@@ -2309,7 +2318,7 @@ public Action Command_airboatgun(int client, int args)
 				if (StrEqual(aInput, "off", false))
 				{
 					SetVariantInt(0);
-					if (blockMsgs[client][0][0])
+					if (g_iBlockMsgs[client][0][0])
 					{
 						AcceptEntityInput(aEnt, "enablegun", -1, -1, 0);
 						changeBeam(client, aEnt);
@@ -2384,7 +2393,7 @@ public Action Command_ignite(int client, int args)
 				IgniteEntity(bEnt, StringToFloat(bSeconds), false, 0, false);
 			}
 			changeBeam(client, bEnt);
-			if (!blockMsgs[client][0][0])
+			if (!g_iBlockMsgs[client][0][0])
 			{
 				ExplodeString(bClassname, "_", brokeClass, 2, 32);
 				if (StrEqual(brokeClass[0][brokeClass], "combine", false))
@@ -2435,7 +2444,7 @@ public Action Command_jeep(int client, int args)
 		{
 			if (StrEqual(jInput, "on", false))
 			{
-				if (!blockMsgs[client][0][0])
+				if (!g_iBlockMsgs[client][0][0])
 				{
 					cmMsg(client, "Turned airboat into a jeep.");
 				}
@@ -2458,7 +2467,7 @@ public Action Command_jeep(int client, int args)
 			{
 				if (StrEqual(jInput, "off", false))
 				{
-					if (!blockMsgs[client][0][0])
+					if (!g_iBlockMsgs[client][0][0])
 					{
 						cmMsg(client, "Turned jeep back into an airboat.");
 					}
@@ -2523,7 +2532,7 @@ public Action Command_god(int client, int args)
 					}
 				}
 				changeBeam(client, gEnt);
-				if (!blockMsgs[client][0][0])
+				if (!g_iBlockMsgs[client][0][0])
 				{
 					PerformByClass(client, gEnt, "Turned invincibility on");
 				}
@@ -2537,7 +2546,7 @@ public Action Command_god(int client, int args)
 					DispatchKeyValue(gEnt, "classname", "prop_physics_multiplayer");
 				}
 				changeBeam(client, gEnt);
-				if (!blockMsgs[client][0][0])
+				if (!g_iBlockMsgs[client][0][0])
 				{
 					PerformByClass(client, gEnt, "Turned invincibility off");
 				}
@@ -2601,7 +2610,7 @@ public Action Command_color(int client, int args)
 		}
 		SetEntityRenderColor(cEnt, StringToInt(sRed, 10), StringToInt(sGrn, 10), StringToInt(sBlu, 10), amt);
 		changeBeam(client, cEnt);
-		if (blockMsgs[client][0][0])
+		if (g_iBlockMsgs[client][0][0])
 		{
 		}
 		else
@@ -2638,11 +2647,11 @@ public Action Command_mark(int client, int args)
 	mclientX[0] = mclientX[0] + 50;
 	mclientY[4] += 50;
 	mclientZ[8] += 50;
-	TE_SetupBeamPoints(mclientOrigin, mclientX, BeamSprite, HaloSprite, 0, 15, 60, 3, 3, 1, 0, redColor, 10);
+	TE_SetupBeamPoints(mclientOrigin, mclientX, g_iBeamSprite, g_iHaloSprite, 0, 15, 60, 3, 3, 1, 0, redColor, 10);
 	TE_SendToClient(client, 0);
-	TE_SetupBeamPoints(mclientOrigin, mclientY, BeamSprite, HaloSprite, 0, 15, 60, 3, 3, 1, 0, greenColor, 10);
+	TE_SetupBeamPoints(mclientOrigin, mclientY, g_iBeamSprite, g_iHaloSprite, 0, 15, 60, 3, 3, 1, 0, greenColor, 10);
 	TE_SendToClient(client, 0);
-	TE_SetupBeamPoints(mclientOrigin, mclientZ, BeamSprite, HaloSprite, 0, 15, 60, 3, 3, 1, 0, blueColor, 10);
+	TE_SetupBeamPoints(mclientOrigin, mclientZ, g_iBeamSprite, g_iHaloSprite, 0, 15, 60, 3, 3, 1, 0, blueColor, 10);
 	TE_SendToClient(client, 0);
 	Format(g_sTempString, 255, "Created red X, green Y, and blue Z marker.");
 	cmMsg(client, g_sTempString);
@@ -2693,10 +2702,10 @@ public Action Command_startMove(int client, int args)
 	if (GetClientAimTarget(client, false) == -1)
 	{
 		lookingAt(client);
-		grabEnt[client] = -1;
+		g_iGrabEnt[client] = -1;
 		return Plugin_Handled;
 	}
-	if (clientGrab[client][0][0])
+	if (g_hClientGrab[client][0][0])
 	{
 		cmMsg(client, "You are already moving something.");
 	}
@@ -2717,20 +2726,20 @@ public Action Command_startMove(int client, int args)
 			float entOrgn[3];
 			GetClientAbsOrigin(client, clientOrgn);
 			GetEntPropVector(moveEnt, Prop_Data, "m_vecAbsOrigin", entOrgn);
-			grabEnt[client] = moveEnt;
+			g_iGrabEnt[client] = moveEnt;
 			int colorOff = GetEntSendPropOffs(moveEnt, "m_clrRender", false);
-			grabEntColor[client][0][0][0] = GetEntData(moveEnt, colorOff, 1);
-			grabEntColor[client][0][0][4] = GetEntData(moveEnt, colorOff + 1, 1);
-			grabEntColor[client][0][0][8] = GetEntData(moveEnt, colorOff + 2, 1);
-			grabEntColor[client][0][0][12] = GetEntData(moveEnt, colorOff + 3, 1);
+			g_iGrabEntColor[client][0][0][0] = GetEntData(moveEnt, colorOff, 1);
+			g_iGrabEntColor[client][0][0][4] = GetEntData(moveEnt, colorOff + 1, 1);
+			g_iGrabEntColor[client][0][0][8] = GetEntData(moveEnt, colorOff + 2, 1);
+			g_iGrabEntColor[client][0][0][12] = GetEntData(moveEnt, colorOff + 3, 1);
 			SetEntProp(moveEnt, Prop_Send, "m_nRenderMode", any1, 1);
 			SetEntityRenderColor(moveEnt, 128, 255, 0, 128);
-			grabEntM[client] = GetEntityMoveType(moveEnt);
+			g_mtGrabEntM[client] = GetEntityMoveType(moveEnt);
 			SetEntityMoveType(moveEnt, MoveType0);
 			g_fGrabDist[client][0][0][0] = FloatSub(clientOrgn[0], entOrgn[0]);
 			g_fGrabDist[client][0][0][4] = FloatSub(clientOrgn[4], entOrgn[4]);
 			g_fGrabDist[client][0][0][8] = FloatSub(clientOrgn[8], entOrgn[8]);
-			clientGrab[client] = CreateTimer(0.1, startGrab, client, 1);
+			g_hClientGrab[client] = CreateTimer(0.1, startGrab, client, 1);
 		}
 		else
 		{
@@ -2741,7 +2750,7 @@ public Action Command_startMove(int client, int args)
 }
 public Action startGrab(Handle timer, any client)
 {
-	if (IsValidEdict(grabEnt[client][0][0]))
+	if (IsValidEdict(g_iGrabEnt[client][0][0]))
 	{
 		float cOrgn[3];
 		float eOrgn[3];
@@ -2749,25 +2758,25 @@ public Action startGrab(Handle timer, any client)
 		eOrgn[0] = FloatSub(cOrgn[0], g_fGrabDist[client][0][0][0]);
 		eOrgn[4] = FloatSub(cOrgn[4], g_fGrabDist[client][0][0][4]);
 		eOrgn[8] = FloatSub(cOrgn[8], g_fGrabDist[client][0][0][8]);
-		TeleportEntity(grabEnt[client][0][0], eOrgn, NULL_VECTOR, g_fEntAng);
+		TeleportEntity(g_iGrabEnt[client][0][0], eOrgn, NULL_VECTOR, g_fEntAng);
 	}
 	else
 	{
-		grabEnt[client] = -1;
-		KillTimer(clientGrab[client][0][0], false);
-		clientGrab[client] = 0;
+		g_iGrabEnt[client] = -1;
+		KillTimer(g_hClientGrab[client][0][0], false);
+		g_hClientGrab[client] = 0;
 	}
 	return Plugin_Continue;
 }
 public Action Command_stopMove(int client, int args)
 {
 	int var1;
-	if (clientGrab[client][0][0])
+	if (g_hClientGrab[client][0][0])
 	{
-		SetEntityRenderColor(grabEnt[client][0][0], grabEntColor[client][0][0][0], grabEntColor[client][0][0][4], grabEntColor[client][0][0][8], grabEntColor[client][0][0][12]);
-		SetEntityMoveType(grabEnt[client][0][0], grabEntM[client][0][0]);
-		KillTimer(clientGrab[client][0][0], false);
-		clientGrab[client] = 0;
+		SetEntityRenderColor(g_iGrabEnt[client][0][0], g_iGrabEntColor[client][0][0][0], g_iGrabEntColor[client][0][0][4], g_iGrabEntColor[client][0][0][8], g_iGrabEntColor[client][0][0][12]);
+		SetEntityMoveType(g_iGrabEnt[client][0][0], g_mtGrabEntM[client][0][0]);
+		KillTimer(g_hClientGrab[client][0][0], false);
+		g_hClientGrab[client] = 0;
 	}
 	return Plugin_Handled;
 }
@@ -2819,7 +2828,7 @@ public Action Command_ladder(int client, int args)
 		var1 = FloatAdd(180, var1);
 		TeleportEntity(ladderProp, LOrigin, CAng, NULL_VECTOR);
 		SetOwner(client, ladderProp);
-		if (blockMsgs[client][0][0])
+		if (g_iBlockMsgs[client][0][0])
 		{
 		}
 		else
@@ -2861,7 +2870,7 @@ public Action Command_solidity(int client, int args)
 			{
 				DispatchKeyValue(sEnt, "solid", "6");
 				changeBeam(client, sEnt);
-				if (!blockMsgs[client][0][0])
+				if (!g_iBlockMsgs[client][0][0])
 				{
 					PerformByClass(client, sEnt, "Turned solidity on");
 				}
@@ -2871,7 +2880,7 @@ public Action Command_solidity(int client, int args)
 			{
 				DispatchKeyValue(sEnt, "solid", "4");
 				changeBeam(client, sEnt);
-				if (!blockMsgs[client][0][0])
+				if (!g_iBlockMsgs[client][0][0])
 				{
 					PerformByClass(client, sEnt, "Turned solidity off");
 				}
@@ -2905,7 +2914,7 @@ public Action Command_sound(int client, int args)
 	}
 	if (GetConVarInt(g_cvMaxCelsClient) > CountCels(client))
 	{
-		if (SoundTime[client][0][0] <= GetGameTime() - 1)
+		if (g_fSoundTime[client][0][0] <= GetGameTime() - 1)
 		{
 			char soundAlias[256];
 			GetCmdArg(1, soundAlias, 255);
@@ -2928,7 +2937,7 @@ public Action Command_sound(int client, int args)
 			DispatchSpawn(soundPropEnt);
 			DispatchKeyValue(soundPropEnt, "classname", "cel_sound");
 			HookSingleEntityOutput(soundPropEnt, "OnPlayerUse", EntityOutput129, false);
-			soundTime[soundPropEnt] = 0;
+			g_fSoundTime2[soundPropEnt] = 0;
 			float SoundOrigin[3];
 			float COrigin[3];
 			float CEyeAngles[3];
@@ -2939,13 +2948,13 @@ public Action Command_sound(int client, int args)
 			SoundOrigin[8] = COrigin[8] + 32;
 			TeleportEntity(soundPropEnt, SoundOrigin, NULL_VECTOR, NULL_VECTOR);
 			SetOwner(client, soundPropEnt);
-			SoundTime[client] = GetGameTime();
+			g_fSoundTime[client] = GetGameTime();
 			CloseHandle(Sounds);
 		}
 		else
 		{
 			tooFast(client);
-			int var1 = SoundTime[client];
+			int var1 = g_fSoundTime[client];
 			var1 = var1[0][0] + 1;
 		}
 	}
@@ -2967,7 +2976,7 @@ public Action Command_music(int client, int args)
 	}
 	if (GetConVarInt(g_cvMaxCelsClient) > CountCels(client))
 	{
-		if (SoundTime[client][0][0] <= GetGameTime() - 1)
+		if (g_fSoundTime[client][0][0] <= GetGameTime() - 1)
 		{
 			char musicAlias[256];
 			char musicVol[16];
@@ -3010,7 +3019,7 @@ public Action Command_music(int client, int args)
 			DispatchSpawn(musicPropEnt);
 			DispatchKeyValue(musicPropEnt, "classname", "cel_music");
 			HookSingleEntityOutput(musicPropEnt, "OnPlayerUse", EntityOutput127, false);
-			musicTime[musicPropEnt] = 0;
+			g_fMusicTime[musicPropEnt] = 0;
 			float MOrigin[3];
 			float COrigin[3];
 			float CEyeAngles[3];
@@ -3021,13 +3030,13 @@ public Action Command_music(int client, int args)
 			MOrigin[8] = COrigin[8] + 32;
 			TeleportEntity(musicPropEnt, MOrigin, NULL_VECTOR, NULL_VECTOR);
 			SetOwner(client, musicPropEnt);
-			SoundTime[client] = GetGameTime();
+			g_fSoundTime[client] = GetGameTime();
 			CloseHandle(Sounds);
 		}
 		else
 		{
 			tooFast(client);
-			int var1 = SoundTime[client];
+			int var1 = g_fSoundTime[client];
 			var1 = var1[0][0] + 1;
 		}
 	}
@@ -3040,7 +3049,7 @@ public Action Command_music(int client, int args)
 }
 public Action Command_startCopy(int client, int Args)
 {
-	if (copyGrab[client][0][0])
+	if (g_hCopyGrab[client][0][0])
 	{
 		cmMsg(client, "You are already copying something.");
 		return Plugin_Handled;
@@ -3064,16 +3073,16 @@ public Action Command_startCopy(int client, int Args)
 		int entFlags;
 		GetEntPropString(cpEnt, Prop_Data, "m_ModelName", modelName, 128);
 		int coloroffset = GetEntSendPropOffs(cpEnt, "m_clrRender", false);
-		copyEntColor[client][0][0][0] = GetEntData(cpEnt, coloroffset, 1);
-		copyEntColor[client][0][0][4] = GetEntData(cpEnt, coloroffset + 1, 1);
-		copyEntColor[client][0][0][8] = GetEntData(cpEnt, coloroffset + 2, 1);
-		copyEntColor[client][0][0][12] = GetEntData(cpEnt, coloroffset + 3, 1);
+		g_iCopyEntColor[client][0][0][0] = GetEntData(cpEnt, coloroffset, 1);
+		g_iCopyEntColor[client][0][0][4] = GetEntData(cpEnt, coloroffset + 1, 1);
+		g_iCopyEntColor[client][0][0][8] = GetEntData(cpEnt, coloroffset + 2, 1);
+		g_iCopyEntColor[client][0][0][12] = GetEntData(cpEnt, coloroffset + 3, 1);
 		renderFx = GetEntProp(cpEnt, Prop_Send, "m_nRenderFX", 1);
 		GetEntPropVector(cpEnt, Prop_Data, "m_vecAbsOrigin", entOrgn);
 		GetEntPropVector(cpEnt, Prop_Data, "m_angRotation", angRot);
 		skinNum = GetEntProp(cpEnt, Prop_Data, "m_nSkin", 1);
 		entFlags = GetEntProp(cpEnt, Prop_Data, "m_spawnflags", 1);
-		copyMovetype[client] = GetEntityMoveType(cpEnt);
+		g_mtCopyMovetype[client] = GetEntityMoveType(cpEnt);
 		if (GetEntityMoveType(cpEnt))
 		{
 			g_bCopyFrozen[client] = 0;
@@ -3153,8 +3162,8 @@ public Action Command_startCopy(int client, int Args)
 		g_fCopyDist[client][0][0][4] = FloatSub(COrigin[4], entOrgn[4]);
 		g_fCopyDist[client][0][0][8] = FloatSub(COrigin[8], entOrgn[8]);
 		SetOwner(client, newEnt);
-		copyEnt[client] = newEnt;
-		copyGrab[client] = CreateTimer(0.1, copyAction, client, 1);
+		g_iCopyEnt[client] = newEnt;
+		g_hCopyGrab[client] = CreateTimer(0.1, copyAction, client, 1);
 	}
 	else
 	{
@@ -3164,7 +3173,7 @@ public Action Command_startCopy(int client, int Args)
 }
 public Action copyAction(Handle timer, any client)
 {
-	if (IsValidEdict(copyEnt[client][0][0]))
+	if (IsValidEdict(g_iCopyEnt[client][0][0]))
 	{
 		float cOrgn[3];
 		float eOrgn[3];
@@ -3172,29 +3181,29 @@ public Action copyAction(Handle timer, any client)
 		eOrgn[0] = FloatSub(cOrgn[0], g_fCopyDist[client][0][0][0]);
 		eOrgn[4] = FloatSub(cOrgn[4], g_fCopyDist[client][0][0][4]);
 		eOrgn[8] = FloatSub(cOrgn[8], g_fCopyDist[client][0][0][8]);
-		TeleportEntity(copyEnt[client][0][0], eOrgn, NULL_VECTOR, g_fEntAng);
+		TeleportEntity(g_iCopyEnt[client][0][0], eOrgn, NULL_VECTOR, g_fEntAng);
 	}
 	else
 	{
-		copyEnt[client] = -1;
-		KillTimer(copyGrab[client][0][0], false);
-		copyGrab[client] = 0;
+		g_iCopyEnt[client] = -1;
+		KillTimer(g_hCopyGrab[client][0][0], false);
+		g_hCopyGrab[client] = 0;
 	}
 	return Plugin_Continue;
 }
 public Action Command_stopCopy(int client, int args)
 {
 	int var1;
-	if (copyGrab[client][0][0])
+	if (g_hCopyGrab[client][0][0])
 	{
 		if (!g_bCopyFrozen[client][0][0])
 		{
-			SetEntityMoveType(copyEnt[client][0][0], copyMovetype[client][0][0]);
-			AcceptEntityInput(copyEnt[client][0][0], "EnableMotion", -1, -1, 0);
+			SetEntityMoveType(g_iCopyEnt[client][0][0], g_mtCopyMovetype[client][0][0]);
+			AcceptEntityInput(g_iCopyEnt[client][0][0], "EnableMotion", -1, -1, 0);
 		}
-		SetEntityRenderColor(copyEnt[client][0][0], copyEntColor[client][0][0][0], copyEntColor[client][0][0][4], copyEntColor[client][0][0][8], copyEntColor[client][0][0][12]);
-		KillTimer(copyGrab[client][0][0], false);
-		copyGrab[client] = 0;
+		SetEntityRenderColor(g_iCopyEnt[client][0][0], g_iCopyEntColor[client][0][0][0], g_iCopyEntColor[client][0][0][4], g_iCopyEntColor[client][0][0][8], g_iCopyEntColor[client][0][0][12]);
+		KillTimer(g_hCopyGrab[client][0][0], false);
+		g_hCopyGrab[client] = 0;
 	}
 	return Plugin_Handled;
 }
@@ -3755,7 +3764,7 @@ public Action Command_vehicleStart(int client, int args)
 	int var1;
 	if (playerEnt != -1)
 	{
-		vehicleTimer[client] = CreateTimer(0.1, moveVehicle, client, 1);
+		g_hVehicleTimer[client] = CreateTimer(0.1, moveVehicle, client, 1);
 	}
 	return Plugin_Handled;
 }
@@ -3776,10 +3785,10 @@ public Action moveVehicle(Handle timer, any client)
 }
 public Action Command_vehicleStop(int client, int args)
 {
-	if (vehicleTimer[client][0][0])
+	if (g_hVehicleTimer[client][0][0])
 	{
-		KillTimer(vehicleTimer[client][0][0], false);
-		vehicleTimer[client] = 0;
+		KillTimer(g_hVehicleTimer[client][0][0], false);
+		g_hVehicleTimer[client] = 0;
 	}
 	return Plugin_Handled;
 }
@@ -3789,7 +3798,7 @@ public Action Command_vehicleStartBack(int client, int args)
 	int var1;
 	if (playerEnt != -1)
 	{
-		vehicleTimer[client] = CreateTimer(0.1, moveVehicleBack, client, 1);
+		g_hVehicleTimer[client] = CreateTimer(0.1, moveVehicleBack, client, 1);
 	}
 	return Plugin_Handled;
 }
