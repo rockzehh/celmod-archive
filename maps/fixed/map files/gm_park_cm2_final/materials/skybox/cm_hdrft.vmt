@@ -1,7 +1,0 @@
-"Sky"
-{
-	"$hdrbaseTexture"	"skybox/cm_hdrft"
-	"$baseTexture" 		"skybox/cmFT"
-	"$nofog" 		"1"
-	"$ignorez" 		"1"
-}

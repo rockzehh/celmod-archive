@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+     "$baseTexture" "models/Trees/Good_Trees\jn_falltree_bark_01"
+$detail detail\wood_detail_01
+$detailscale 2.563
+$detailblendfactor .8
+$detailblendmode 0
+
+}

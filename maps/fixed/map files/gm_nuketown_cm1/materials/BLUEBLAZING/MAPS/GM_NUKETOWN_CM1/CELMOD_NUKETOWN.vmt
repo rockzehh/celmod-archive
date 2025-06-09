@@ -1,6 +1,0 @@
-"LightmappedGeneric"
-{
-	"$basetexture" "blueblazing/maps/gm_nuketown_cm1/celmod_nuketown"
-	"$bumpmap" "blueblazing/maps/gm_nuketown_cm1/celmod_nuketown_norm"
-	"$translucent" 1
-}

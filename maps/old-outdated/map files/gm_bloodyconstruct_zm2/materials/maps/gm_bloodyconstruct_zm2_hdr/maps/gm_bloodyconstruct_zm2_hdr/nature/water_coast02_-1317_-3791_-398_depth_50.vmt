@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/maps/gm_bloodyconstruct_zm2_hdr/nature/water_coast02_-1317_-3791_-398.vmt"
+	"insert"
+	{
+		"$waterdepth"		"50"
+	}
+}

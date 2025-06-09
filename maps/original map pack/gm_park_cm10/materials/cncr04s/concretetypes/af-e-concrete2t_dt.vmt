@@ -1,0 +1,8 @@
+"lightmappedgeneric"
+{
+	"$baseTexture" "cncr04s/concretetypes/AF-E-concrete2t"
+	"$surfaceprop" "concrete"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.03"
+	"keywords" "concrete"
+}

@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/celmod/xmastree/leaf2"
+	"$alphatest" 1
+	"$model" 1
+	"$nocull" 1
+	"$nodecal" 1
+}

@@ -1,0 +1,11 @@
+"vertexlitgeneric"
+{
+	"$alphatest" 1
+        "$baseTexture" "models\Trees\Good_Trees\jn_falltree"
+	"$nocull" 1
+	//"$selfillum" 1
+$detail detail\noise_detail_01
+$detailscale 7.74
+$detailblendfactor 0.8
+$detailblendmode 0
+}

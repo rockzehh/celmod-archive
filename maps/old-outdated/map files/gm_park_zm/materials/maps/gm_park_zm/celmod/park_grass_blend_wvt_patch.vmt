@@ -1,0 +1,10 @@
+"lightmappedgeneric"
+{
+	"$basetexture"		"cncr04s/grass/grass1"
+	"%tooltexture"		"nature/blenddirtgrass006a_tooltexture"
+	"$basetexturetransform"		"center .5 .5 scale 1 1 rotate 0 translate 0 0"
+	"$basetexturetransform2"		"center .5 .5 scale 2 2 rotate 0 translate 0 0"
+	"$surfaceprop"		"grass"
+	"$detail"		"celmod/clouds2"
+	"$detailscale"		"0.030000"
+}

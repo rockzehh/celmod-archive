@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/maps/gm_park_cm7/nature/water_canals_water_clear_-10045_-4707_-1329.vmt"
+	"insert"
+	{
+		"$waterdepth"		"50"
+	}
+}

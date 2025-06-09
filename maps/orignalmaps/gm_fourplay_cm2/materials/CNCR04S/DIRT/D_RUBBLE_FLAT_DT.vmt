@@ -1,8 +1,0 @@
-"lightmappedgeneric"
-{
-	"$basetexture" "cncr04s/dirt/d_rubble_flat"
-	"$surfaceprop" "dirt"
-	"$detail" "celmod/gm_cubicle/cloud_crap"
-	"$detailscale" "0.03"
-	"$keywords" "dirt"
-}

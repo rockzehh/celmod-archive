@@ -1,8 +1,0 @@
-"patch"
-{
-	"include"		"materials/celmod/water_autumn.vmt"
-	"insert"
-	{
-		"$waterdepth"		"1536"
-	}
-}

@@ -1,8 +1,0 @@
-"patch"
-{
-	"include"		"materials/PLASTER/PLASTERWALL022C.vmt"
-	"replace"
-	{
-		"$envmap"		"maps/gm_construct_new_d/c-636_4640_-103"
-	}
-}

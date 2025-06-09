@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$baseTexture" "celmod/park_snow"
+	"$surfaceprop" "grass"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.03"
+}

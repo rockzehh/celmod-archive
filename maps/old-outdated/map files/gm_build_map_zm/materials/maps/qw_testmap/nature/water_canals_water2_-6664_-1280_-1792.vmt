@@ -1,0 +1,11 @@
+"patch"
+{
+	"include"		"materials/NATURE/WATER_CANALS_WATER2.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/qw_testmap/c-6664_-1280_-1792"
+		"Proxies"
+		{
+		}
+	}
+}

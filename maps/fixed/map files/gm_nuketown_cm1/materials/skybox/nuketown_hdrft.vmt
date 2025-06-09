@@ -1,7 +1,0 @@
-"Sky"
-{
-	"$hdrbaseTexture"	"skybox/nuketown_hdrft"
-	"$baseTexture" 		"skybox/nuketownFT"
-	"$nofog" 		"1"
-	"$ignorez" 		"1"
-}

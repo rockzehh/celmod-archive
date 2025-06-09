@@ -1,0 +1,10 @@
+"lightmappedgeneric"
+{
+	"$basetexture" "celmod/park_hq_plaster1"
+	"$surfaceprop" "plaster"
+	"$keywords" "plaster"
+	"$detail" "detail\plaster_detail_01"
+	"$detailscale" 6.783
+	"$detailblendfactor" .8
+	"$detailblendmode" 0
+}

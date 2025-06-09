@@ -1,0 +1,11 @@
+"patch"
+{
+	"include"		"materials/NATURE/WATER_CANALS_WATER_CLEAR.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/gm_park_cm7/c10236_-4707_-1329"
+		"Proxies"
+		{
+		}
+	}
+}

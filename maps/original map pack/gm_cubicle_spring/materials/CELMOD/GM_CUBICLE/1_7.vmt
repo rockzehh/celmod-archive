@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "celmod/gm_cubicle/1_7"
+	"$bumpmap" "celmod/gm_cubicle/1_7n"
+	"$surfaceprop" "concrete"
+	"$detail" "celmod/gm_cubicle/cloud_crap"
+	"$detailscale" "0.03"	
+}

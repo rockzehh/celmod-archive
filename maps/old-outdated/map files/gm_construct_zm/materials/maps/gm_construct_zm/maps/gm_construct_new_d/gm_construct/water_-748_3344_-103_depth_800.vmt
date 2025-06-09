@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/maps/gm_construct_new_d/gm_construct/water_-748_3344_-103.vmt"
+	"insert"
+	{
+		"$waterdepth"		"800"
+	}
+}

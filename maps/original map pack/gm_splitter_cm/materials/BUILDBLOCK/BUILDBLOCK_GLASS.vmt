@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+    "$basetexture" "glass/glasswindowbreak070a"
+    "$translucent" 1
+"$surfaceprop" "glass"
+}

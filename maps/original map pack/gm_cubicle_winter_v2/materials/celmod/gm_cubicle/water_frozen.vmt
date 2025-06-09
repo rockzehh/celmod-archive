@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "nature/snowfloor001a"
+	"$surfaceprop" "ice"
+	"$alpha"	"0.75"
+
+	"$detail" "celmod/gm_cubicle/cloud_crap"
+	"$detailscale" "0.03"
+}

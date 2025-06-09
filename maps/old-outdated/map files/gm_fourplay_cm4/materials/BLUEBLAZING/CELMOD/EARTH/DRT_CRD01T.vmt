@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "blueblazing/celmod/earth/drt_crd01"
+	"$bumpmap" "blueblazing/celmod/earth/drt_crd01_nrm"
+	"$surfaceprop" "Dirt"
+	"$detail" "celmod/clouds2"
+	"$detailscale" "0.10"
+}

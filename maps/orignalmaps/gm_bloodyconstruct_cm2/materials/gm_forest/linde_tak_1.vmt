@@ -1,5 +1,0 @@
-"vertexlitgeneric" {
-    	"$basetexture" "gm_forest\linde_tak_1.vmt"
-	"$alphatest" 1
-    	"$model" "1"
-}

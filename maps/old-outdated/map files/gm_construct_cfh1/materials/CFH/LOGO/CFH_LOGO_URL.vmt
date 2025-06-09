@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "cfh/logo/cfh_logo_url"
+	"$bumpmap" "cfh/logo/cfh_logo_url_norm"
+	"$surfaceprop" "Concrete"
+	"$surfaceprop2" "Metal"
+	"$translucent" 1
+}
