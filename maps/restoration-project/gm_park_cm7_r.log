@@ -1,0 +1,748 @@
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (1)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (599849 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 590 texinfos to 369
+Reduced 125 texdatas to 108 (4130 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+4 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (599849 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 590 texinfos to 369
+Reduced 125 texdatas to 108 (4130 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+9 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (599849 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 590 texinfos to 369
+Reduced 125 texdatas to 108 (4130 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+5 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (599849 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 590 texinfos to 369
+Reduced 125 texdatas to 108 (4130 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+6 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (1)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (599849 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 590 texinfos to 369
+Reduced 125 texdatas to 108 (4130 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+5 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (1)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (602009 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 602 texinfos to 376
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+5 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (1)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (602009 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 602 texinfos to 376
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+5 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (602009 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 602 texinfos to 376
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+13 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (2) (602009 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 602 texinfos to 376
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+8 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (602009 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 602 texinfos to 376
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+6 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (603516 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 612 texinfos to 380
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+6 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (1)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (2) (603516 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 612 texinfos to 380
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+7 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (1)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (603516 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 612 texinfos to 380
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+5 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (1)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (2) (603516 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 612 texinfos to 380
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+13 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (603516 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 612 texinfos to 380
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+5 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (1)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (1) (603516 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 612 texinfos to 380
+Reduced 126 texdatas to 108 (4149 bytes to 3468)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1603283, actual size 1595431
+6 seconds elapsed
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Deathmatch\hl2mp\materials
+Loading C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+Could not locate 'GameData' key in c:\program files (x86)\steam\steamapps\common\half-life 2 deathmatch\hl2mp\gameinfo.txt
+Patching WVT material: maps/gm_park_cm7_r/celmod/park_grass_blend_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 242 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+"celmod/lava" - "materials/celmod/lava.vtf": cached version doesn't exist
+done (0)
+writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.prt...Building visibility clusters...
+done (0)
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day02_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+WARNING: Map using power 4 displacements, terrain physics cannot be compressed, map will need additional memory and CPU.
+done (2) (603908 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 621 texinfos to 386
+Reduced 131 texdatas to 112 (4469 bytes to 3751)
+Writing C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp
+MSG_FILEWRITE - Filesystem was asked to write to 'C:\Users\z\Documents\CelModMapProject\gm_park_cm7_r.bsp', but we don't own that location. Allowing.
+Wrote ZIP buffer, estimated size 1605492, actual size 1597104
+10 seconds elapsed
