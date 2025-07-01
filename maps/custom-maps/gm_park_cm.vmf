@@ -15874,7 +15874,7 @@ entity
 {
 	"id" "5059"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "-209 -2240 128"
 	editor
 	{
@@ -15888,7 +15888,7 @@ entity
 {
 	"id" "5060"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "272 -3581 129"
 	editor
 	{
@@ -15902,7 +15902,7 @@ entity
 {
 	"id" "5061"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "272 -4272 129"
 	editor
 	{
@@ -15916,7 +15916,7 @@ entity
 {
 	"id" "5072"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "38 3456 135"
 	editor
 	{

@@ -90043,7 +90043,7 @@ entity
 {
 	"id" "5059"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "-209 -2240 128"
 	editor
 	{
@@ -90057,7 +90057,7 @@ entity
 {
 	"id" "5060"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "272 -3581 129"
 	editor
 	{
@@ -90071,7 +90071,7 @@ entity
 {
 	"id" "5061"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "272 -4272 129"
 	editor
 	{
@@ -90085,7 +90085,7 @@ entity
 {
 	"id" "5062"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "293 -4132 -1409"
 	editor
 	{
@@ -90099,7 +90099,7 @@ entity
 {
 	"id" "5063"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "288 -4480 -460"
 	editor
 	{
@@ -90113,7 +90113,7 @@ entity
 {
 	"id" "5064"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "10235 -4803 123"
 	editor
 	{
@@ -90127,7 +90127,7 @@ entity
 {
 	"id" "5065"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"sides" "493"
 	"origin" "-10045 -4803 123"
 	editor
@@ -90142,7 +90142,7 @@ entity
 {
 	"id" "5066"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"sides" "503"
 	"origin" "-10045 -4707 -1329"
 	editor
@@ -90157,7 +90157,7 @@ entity
 {
 	"id" "5067"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "-10045 -4441 -1314"
 	editor
 	{
@@ -90171,7 +90171,7 @@ entity
 {
 	"id" "5068"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "-10045 -4216 -1379"
 	editor
 	{
@@ -90185,7 +90185,7 @@ entity
 {
 	"id" "5069"
 	"classname" "env_cubemap"
-	"cubemapsize" "9"
+	"cubemapsize" "8"
 	"origin" "10236 -4707 -1329"
 	editor
 	{
@@ -90199,7 +90199,7 @@ entity
 {
 	"id" "5070"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "-888 -6477 2354"
 	editor
 	{
@@ -90213,7 +90213,7 @@ entity
 {
 	"id" "5071"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "310 -6477 2354"
 	editor
 	{
@@ -90227,7 +90227,7 @@ entity
 {
 	"id" "5072"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "38 3456 135"
 	editor
 	{

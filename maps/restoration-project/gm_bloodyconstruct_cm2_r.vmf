@@ -31505,7 +31505,7 @@ entity
 {
 	"id" "1833"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"sides" "1616 1721 1753 383"
 	"origin" "-1317 -3791 -398"
 	editor
@@ -31520,7 +31520,7 @@ entity
 {
 	"id" "1834"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "-1317 -3525 -383"
 	editor
 	{
@@ -31534,7 +31534,7 @@ entity
 {
 	"id" "1835"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "-4381 -5278 -448"
 	editor
 	{
@@ -31548,7 +31548,7 @@ entity
 {
 	"id" "1836"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"sides" "1618"
 	"origin" "1250 1054 125"
 	editor

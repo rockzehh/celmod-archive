@@ -28712,7 +28712,7 @@ entity
 {
 	"id" "1467"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"sides" "224"
 	"origin" "3200 3200 1992"
 	editor
@@ -28727,7 +28727,7 @@ entity
 {
 	"id" "1468"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "121 2702 2001"
 	editor
 	{
@@ -28741,7 +28741,7 @@ entity
 {
 	"id" "1469"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "0 0 1992"
 	editor
 	{
@@ -28755,7 +28755,7 @@ entity
 {
 	"id" "1470"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "0 -3200 1992"
 	editor
 	{
@@ -28769,7 +28769,7 @@ entity
 {
 	"id" "1471"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "3200 -3200 1992"
 	editor
 	{
@@ -28783,7 +28783,7 @@ entity
 {
 	"id" "1472"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "6400 -3200 1992"
 	editor
 	{
@@ -28797,7 +28797,7 @@ entity
 {
 	"id" "1473"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "6400 0 1992"
 	editor
 	{
@@ -28811,7 +28811,7 @@ entity
 {
 	"id" "1474"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "6400 3200 2092"
 	editor
 	{
@@ -28825,7 +28825,7 @@ entity
 {
 	"id" "1475"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "3200 0 1992"
 	editor
 	{
@@ -28839,7 +28839,7 @@ entity
 {
 	"id" "1476"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "-3726 12 1669"
 	editor
 	{
@@ -28853,7 +28853,7 @@ entity
 {
 	"id" "1477"
 	"classname" "env_cubemap"
-	"cubemapsize" "0"
+	"cubemapsize" "8"
 	"origin" "4050 0 9992"
 	editor
 	{
